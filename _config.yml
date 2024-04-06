@@ -1,0 +1,55 @@
+# Config file for settings affecting the whole blog. For technical reasons
+# this file is *NOT* auto-reloaded with 'bundle exec jekyll serve'; after
+# making changes here restart the server for them to take effect.
+
+# Site settings
+title: fogg.uk
+author:
+  name: Josh Fogg
+  email: joshua.h.fogg@gmail.com
+description: >-  # this means to ignore newlines until the next key
+  Personal website and blog of Josh Fogg. Mathematician, Writer, Gamer,
+  and Techie. Not necessarily in that order.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "fogg.uk" # base hostname for your site (hosted)
+
+# Build settings
+theme: jekyll-wren  # use version https://rubygems.org/gems/jekyll-wren
+markdown: kramdown  # enables extended markdown features (e.g footnotes)
+kramdown:
+   math_engine: mathjax
+
+# Wren-specific settings
+wren:
+  # Generate social links in footer
+  social_links:
+    github: foggalong
+    instagram: joshua.h.fogg
+    linkedin: joshfogg
+    reddit: foggalong
+    twitter: foggalong
+
+  # Pages to include in the header
+  header_pages:
+  - pages/blog.md
+  - pages/about.md
+
+# From Jekyll 4.0 theme-gems can no longer include _data so this is
+# a workaround to ensure that the data is still provided through a
+# config merge without using jekyll-data to stay GHP compatible.
+wren_social_data:
+  github:
+    name: GitHub
+    url:  github.com
+  instagram:
+    name: Instagram
+    url:  instagram.com
+  linkedin:
+    name: LinkedIn
+    url:  linkedin.com/in
+  reddit:
+    name: Reddit
+    url:  reddit.com/u
+  twitter:
+    name: Twitter
+    url:  twitter.com

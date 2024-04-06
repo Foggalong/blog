@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-07T22:54:52+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">fogg.uk</title><subtitle>Personal website and blog of Josh Fogg. Mathematician, Writer, Gamer, and Techie. Not necessarily in that order.</subtitle><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><entry><title type="html">The Year That Was 202̵̣̹͎́̿̋0̴̨̠̥͂̅̽1̴̭̯̔̋͒͜</title><link href="http://localhost:4000/2022/01/01/the-year-that-was-2020.html" rel="alternate" type="text/html" title="The Year That Was 202̵̣̹͎́̿̋0̴̨̠̥͂̅̽1̴̭̯̔̋͒͜" /><published>2022-01-01T16:25:00+00:00</published><updated>2022-01-01T16:25:00+00:00</updated><id>http://localhost:4000/2022/01/01/the-year-that-was-2020</id><content type="html" xml:base="http://localhost:4000/2022/01/01/the-year-that-was-2020.html">&lt;p&gt;&lt;img src=&quot;/images/blogs/no-new-years-resolutions.jpg&quot; alt=&quot;Screenshot of a tweet from Sarah Lazarus that reads: 'no new years resolutions. it is the circumstances turn to improve'&quot; style=&quot;display: block;&quot; /&gt;&lt;/p&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="resolutions" /><summary type="html"></summary></entry><entry><title type="html">Circumference of an ellipse? Can’t do it mate.</title><link href="http://localhost:4000/2021/10/15/ellipses.html" rel="alternate" type="text/html" title="Circumference of an ellipse? Can’t do it mate." /><published>2021-10-15T18:10:00+01:00</published><updated>2021-10-15T18:10:00+01:00</updated><id>http://localhost:4000/2021/10/15/ellipses</id><content type="html" xml:base="http://localhost:4000/2021/10/15/ellipses.html">&lt;p&gt;At the 2021 &lt;a href=&quot;https://www.suttontrust.com&quot;&gt;Sutton Trust&lt;/a&gt; summer school a student asked us for help with an integral she’d been struggling with:&lt;/p&gt;
+
+\[\begin{equation}
+    I = \int_0^a \frac{a^4 + (b^2 - a^2)x^2}{a^4 - a^2x^2}~{\mathrm{d}x}.
+\end{equation}\]
+
+&lt;p&gt;What followed was a dive down the rabbit hole of history, travelling from work of the mathematical greats to the depths of Google Group archives, all to answer one question: what’s the deal with the circumference of an ellipse?&lt;sup id=&quot;fnref:0&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-the-problem&quot;&gt;What’s the problem?&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/blogs/ellipses/base-circle.png&quot; alt=&quot;Generic Circle&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/blogs/ellipses/base-ellipse.png&quot; alt=&quot;Generic Ellipse&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\(\text{Circle Area} = \pi r^2 \\ \text{Circumference} = 2\pi r\)&lt;/td&gt;
+      &lt;td&gt;\(\text{Ellipse Area} = \pi ab \\ \text{Circumference} = \text{???}\)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We’re all taught in school that a circle with diameter \(2r\) has area \(\pi r^2\) and that its circumference is \(2\pi r\). You might have been taught that an  ellipse with width \(2a\) and height \(2b\) has area \(\pi ab\), but what about its circumference? It turns out there’s no such ‘elementary’ equation for the circumference of an ellipse.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-doesnt-it-exist&quot;&gt;Why doesn’t it exist?&lt;/h2&gt;
+
+&lt;p&gt;We remember from school that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Arc_length&quot;&gt;arc length&lt;/a&gt; of a curve between \(x = x_1\) and \(x = x_2\), given in cartesian coordinates, is&lt;/p&gt;
+
+\[s = \int_{x_1}^{x_2} \sqrt{1 + {\left( \frac{\mathrm{d}y}{\mathrm{d}x} \right)}^2}\mathrm{d}x.\]
+
+&lt;p&gt;If we first look at circle, when centred on zero&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; it has equation \(x^2 + y^2 = r^2\), so&lt;/p&gt;
+
+\[\begin{align}
+    y^2 = r^2 - x^2 &amp;amp;\Rightarrow y = \sqrt{r^2 - x^2} \\
+                    &amp;amp;\Rightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{x}{\sqrt{r^2 - x^2}} \\
+                    &amp;amp;\Rightarrow {\left( \frac{\mathrm{d}y}{\mathrm{d}x} \right)}^2 = \frac{x^2}{r^2 - x^2}.
+\end{align}\]
+
+&lt;p&gt;We can use the arc length equation to find the circumference, \(s\), of the circle. Using \(x_1 = 0\) and \(x_2 = r\) gives a quarter of the circumference, so&lt;/p&gt;
+
+\[\begin{align*}
+    s &amp;amp;= 4\int_0^r \sqrt{1 + \frac{x^2}{r^2 - x^2}}~{\mathrm{d}x} \\
+      &amp;amp;= 4\int_0^r \sqrt{\frac{r^2}{r^2 - x^2}}~{\mathrm{d}x} \\
+      &amp;amp;= 4\int_0^r \sqrt{\frac{1}{1 - {\left(\frac{x}{r}\right)}^2} }~{\mathrm{d}x} \\
+      &amp;amp;= 4{\left[ r\sin^{-1}\left(\frac{x}{r}\right)\right]}_0^r \\
+      &amp;amp;= 4r(\sin^{-1}1 - \sin^{-1}0) \\
+      &amp;amp;= 2\pi r.
+\end{align*}\]
+
+&lt;p&gt;That’s the circumference formula we all know and love! Ellipses are just squashed circles so logically the same should work for them right?&lt;/p&gt;
+
+&lt;p&gt;A standard ellipse with width \(2a\) and height \(2b\) has equation \(\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\). Another fact which will be useful later is that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Eccentricity_(mathematics)&quot;&gt;eccentricity&lt;/a&gt; of an ellipse is given by \(k = \sqrt{1 - b^2/a^2}\). Working as before,&lt;/p&gt;
+
+\[\begin{align}
+    y^2 = b^2 - \frac{x^2 b^2}{a^2}
+        &amp;amp;\Rightarrow y = \sqrt{b^2 - \frac{b^2}{a^2}x^2} \\
+        &amp;amp;\Rightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{b^2}{a^2}\cdot\frac{x}{\sqrt{b^2 - \frac{b^2}{a^2}x^2}} \\
+        &amp;amp;\Rightarrow {\left( \frac{\mathrm{d}y}{\mathrm{d}x} \right)}^2 = \frac{b^4}{a^4}\cdot\frac{x^2}{b^2 - \frac{b^2}{a^2}x^2}.
+\end{align}\]
+
+&lt;p&gt;Oh dear. For ellipses \(\frac{\mathrm{d}y}{\mathrm{d}x}\) is already more complicated than it was for circles, and that’s before we’ve even started integrating. Maybe there’ll be some cancellations though?&lt;/p&gt;
+
+&lt;p&gt;Using the equation for arc length as before with \(x_1 = 0\) and \(x_2 = a\) to find a quarter of the circumference gives&lt;/p&gt;
+
+\[\begin{align}
+    s &amp;amp;= 4\int_0^a \sqrt{1 + \frac{b^4}{a^4}\cdot\frac{x^2}{b^2 - \frac{b^2}{a^2}x^2} }{\mathrm{d}x} \\
+      &amp;amp;= 4\int_0^a \sqrt{1 + \frac{b^2 x^2}{a^4 - a^2x^2}}{\mathrm{d}x} \\
+      &amp;amp;= 4\int_0^{\frac{\pi}{2}} \sqrt{1 + \frac{(ab)^2\sin^2\theta}{a^4(1-\sin^2\theta)}} \cdot a\cos\theta~{\mathrm{d}\theta} \\
+      &amp;amp;= 4\int_0^{\frac{\pi}{2}} \sqrt{1 + \frac{b^2}{a^2}\frac{\sin^2\theta}{\cos^2\theta}} \cdot a\cos\theta~{\mathrm{d}\theta} \\
+      &amp;amp;= 4\int_0^{\frac{\pi}{2}} \sqrt{a^2\cos^2\theta + b^2\sin^2\theta}~{\mathrm{d}\theta} \\
+      &amp;amp;= 4\int_0^{\frac{\pi}{2}} \sqrt{a^2 + (b^2-a^2)\sin^2\theta}~{\mathrm{d}\theta}  \\
+      &amp;amp;= 4a\int_0^{\frac{\pi}{2}} \sqrt{1 + \left(1 - \frac{b^2}{a^2} \right)\sin^2\theta}~{\mathrm{d}\theta} \\
+      &amp;amp;= 4a\int_0^{\frac{\pi}{2}} \sqrt{1 - k^2\sin^2\theta}~{\mathrm{d}\theta}
+\end{align}\]
+
+&lt;p&gt;at which point we stop and reconsider our life choices. This &lt;em&gt;looks&lt;/em&gt; simple but just isn’t going anywhere.&lt;/p&gt;
+
+&lt;p&gt;This turns out to be what’s known as the &lt;strong&gt;complete &lt;a href=&quot;https://en.wikipedia.org/wiki/Elliptic_integral&quot;&gt;elliptic integral&lt;/a&gt; of the second kind&lt;/strong&gt;, a famously non-elementary integral. That is to say, it has no ‘nice’ solutions which means there isn’t an analogue to a circle’s \(2\pi r\) when looking at ellipses. To quote Gérard Michon:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are simple formulas but they are not exact, and there are exact formulas but they are not simple.&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Showing why it’s non-elementary though goes beyond the scope of this post.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-can-it-be-approximated&quot;&gt;How can it be approximated?&lt;/h2&gt;
+
+&lt;p&gt;Lets first look at the ‘simple’ formulas that aren’t exact. Over the years there have been many different attempts dreamt up for this, but if we’re wanting &lt;em&gt;truly&lt;/em&gt; elementary formulas then we’ve a couple prominent options.&lt;/p&gt;
+
+&lt;p&gt;When doing his work on orbits &lt;a href=&quot;https://en.wikipedia.org/wiki/Johannes_Kepler&quot;&gt;Johannes Kepler&lt;/a&gt; (1609) used the geometric average, \(s \approx 2\pi\sqrt{ab},\) to approximate the circumference. It’s very poor with a worst case error of 100%, but it &lt;em&gt;was&lt;/em&gt; over 400 years ago so what you gonna do.&lt;/p&gt;
+
+&lt;p&gt;About 170 years later, &lt;a href=&quot;https://en.wikipedia.org/wiki/Leonhard_Euler&quot;&gt;Leonhard Euler&lt;/a&gt; (1773) gave it a bash and figured out \(s\) can be bounded below by the arithmetic mean and above by the root mean squared,&lt;/p&gt;
+
+\[2\pi\frac{a+b}{2} \leqslant s \leqslant 2\pi\sqrt{\frac{a^2 + b^2}{2}}.\]
+
+&lt;p&gt;More recently, &lt;a href=&quot;https://en.wikipedia.org/wiki/Matt_Parker&quot;&gt;Matt Parker&lt;/a&gt; (2020)&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; debuted his lazy approximation,&lt;/p&gt;
+
+\[s \approx \pi\left(\frac{6}{5}a + \frac{3}{4}b\right)~\text{where}~a\geqslant b,\]
+
+&lt;p&gt;which came from computational optimization: finding the numeral rational coefficients for an equation of that form which give the least error on average over a given range of \(a\).&lt;/p&gt;
+
+&lt;p&gt;It’s useful to see just how far off the truth these formulas are so we plot their deviation from the true circumference. Without loss of generality, we can vary the value of \(a\) while keeping \(b = 1\); we don’t care about orientation or scale.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/low%20approx%20(NPS)%20a%20=%205.png&quot; alt=&quot;Graph of error in the simple approximations up to a = 5.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Straight away we see that, with the possible exception of Lazy Parker, all these are pretty bad for anything except a very-round ellipse. Euler’s bounds are almost symmetrically bad and Kepler’s attempt shoots way off to the bottom, underestimating by almost 10% already by \(a = 2\).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/low%20approx%20(NPS)%20a%20=%2020.png&quot; alt=&quot;Graph of error in the simple approximations up to a = 20.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Lazy Parker approximation continues to beat these even at the extreme value of \(a = 20\), though by then it is underestimating by 3.43%. If we’re willing to add in some more bells and whistles though we can do better. These aren’t formulas you’d want to memorise but they &lt;em&gt;will&lt;/em&gt; get you a good answer.&lt;/p&gt;
+
+&lt;p&gt;It wouldn’t be maths if &lt;a href=&quot;https://en.wikipedia.org/wiki/Srinivasa_Ramanujan&quot;&gt;Srinivasa Ramanujan&lt;/a&gt; (1914) didn’t have a finger in the pie, and he gave two pretty nice approximations:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;\(s \approx \pi\left( 3(a+b) - \sqrt{(3a+b)(a+3b)} \right)\),&lt;/li&gt;
+  &lt;li&gt;\(s \approx \pi(a+b)\left( 1 + \frac{3h}{10+\sqrt{4-3h}} \right) \text{ where } h = \frac{(a-b)^2}{(a+b)^2}\).&lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The latter of these is astoundingly good as we’ll see in a moment. Parker also gave an coefficient-optimized solution mimicking the former,&lt;/p&gt;
+
+\[\pi\left( \frac{53}{3}a + \frac{717}{36}b - \sqrt{269a^2 + 667ab + 371b^2} \right)~\text{where}~a\geqslant b\]
+
+&lt;p&gt;which has decent performance, though at the expense of complexity.&lt;/p&gt;
+
+&lt;p&gt;Far more recently, and coming from the unlikeliest of places, &lt;a href=&quot;https://www.numericana.com/fame/index.htm#cantrell&quot;&gt;David Cantrell&lt;/a&gt; (2001) posted the following optimizable formula to a &lt;a href=&quot;https://groups.google.com/g/sci.math/c/0mLj1uwevUM/m/JJSmdy-EdfcJ&quot;&gt;Google Group&lt;/a&gt;:&lt;/p&gt;
+
+\[s \approx 4(a+b) - 2(4-\pi)\frac{ab}{H_p} \text{ where } H_p = {\left(  \frac{a^p + b^p}{2} \right)}^{\frac{1}{p}}.\]
+
+&lt;p&gt;Here \(H_p\) is the &lt;a href=&quot;https://en.wikipedia.org/wiki/Generalized_mean&quot;&gt;Hölder mean&lt;/a&gt;. The value of \(p\) can be found through optimization or analysis, with \(p = (3\pi - 8)/(8-2\pi)\) working best for ‘round’ ellipses and \(p = \ln(2)/\ln(2 /(4-\pi))\) being optimal for ‘elongated’ ellipses. In practice, we can use \(p = 0.825\) which does just fine for everything.&lt;/p&gt;
+
+&lt;p&gt;Though complicated approximations make for complicated graphs, all six of these approximations outperform all of our simple, rough approximations.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/high%20approx%20(NPS)%20a%20=%205.png&quot; alt=&quot;Graph of error in the better approximations up to a = 5.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ramanujan II is an incredible approximation and remains best right through to \(a = 20\), though Cantrell with \(p\) for elongated ellipses beats it soon after.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/high%20approx%20(NPS)%20a%20=%2020.png&quot; alt=&quot;Graph of error in the better approximations up to a = 20.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What if we look even further afield though, maybe at \(a = 75\)? At this point we might be tempted to stop and say&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Who’s having an ellipse which is 75 times as wide as it is high? That’s just ridiculous! (Parker, 2020)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After all, even the orbit of &lt;a href=&quot;https://en.wikipedia.org/wiki/Halley%27s_Comet&quot;&gt;Halley’s comet&lt;/a&gt;, famed for being highly elliptical, only has \(a = 3.93\) (an eccentricity of \(0.9671\)).&lt;/p&gt;
+
+&lt;p&gt;Well it turns out the &lt;a href=&quot;https://en.wikipedia.org/wiki/Orbital_eccentricity#Examples&quot;&gt;most elliptical orbit&lt;/a&gt; we’ve discovered is of comet C/1965 S1-A Ikeya-Seki&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;. It has an eccentricity of \(0.999915\) giving \(a \approx 76.7 &amp;gt; 75\).&lt;sup id=&quot;fnref:6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/example-ellipses.png&quot; alt=&quot;Ellipses for b = 1, a = 1, 5, 20, 80, 3.93, and 76.7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s a motivator to look further, up to \(a = 80\). There we see Ramanujan II has started to diverge more significantly from the truth and Cantrell’s approximation is winning out, particularly when&lt;/p&gt;
+
+\[p = \frac{\ln(2)}{\ln\left( \frac{2}{4-\pi} \right)}\]
+
+&lt;p&gt;since it’s optimum for elongated ellipses.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/high%20approx%20(NPS)%20a%20=%2080.png&quot; alt=&quot;Graph of error in the better approximations up to a = 80.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All these approximations are pretty good and even the worst among them, Parker’s, stays within 0.5% error. If we want to find the &lt;em&gt;actual&lt;/em&gt; circumference of an ellipse though we’ll have to look beyond these approximations. For that we now turn out attention to the exact formulas that are not simple.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-do-we-find-it-exactly&quot;&gt;How do we find it exactly?&lt;/h2&gt;
+
+&lt;p&gt;There are three main &lt;a href=&quot;https://en.wikipedia.org/wiki/Power_series&quot;&gt;power series&lt;/a&gt; used for ellipse circumferences: one from &lt;a href=&quot;https://en.wikipedia.org/wiki/Colin_Maclaurin&quot;&gt;Colin Maclaurin&lt;/a&gt; (1742),&lt;/p&gt;
+
+\[s = 2\pi a\sum_{m=0}^\infty \left( {\left( \frac{(2m)!}{m!m!} \right)}^2 \frac{k^{2m}}{16^m (1-2m)} \right)~\text{ where } k = \sqrt{1 - \frac{b^2}{a^2}},\]
+
+&lt;p&gt;one from &lt;a href=&quot;https://en.wikipedia.org/wiki/Leonhard_Euler&quot;&gt;Leonhard Euler&lt;/a&gt; (1776),&lt;/p&gt;
+
+\[s = \pi\sqrt{2(a^2+b^2)}\sum_{m=0}^\infty \left( {\left(\frac{\delta}{16}\right)}^m \cdot \frac{(4m-3)!!}{(m!)^2} \right)~\text{ where } \delta = {\left( \frac{a^2-b^2}{a^2+b^2} \right)}^2,\]
+
+&lt;p&gt;and one from &lt;a href=&quot;https://en.wikipedia.org/wiki/James_Ivory_(mathematician)&quot;&gt;James Ivory&lt;/a&gt; (1796)&lt;sup id=&quot;fnref:7&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;,&lt;/p&gt;
+
+\[s = \pi(a+b)\sum_{m=0}^\infty \left( {\left( \frac{(2m)!}{m!m!} \right)}^2  \frac{h^m}{16^m {(1-2m)}^2} \right)~\text{ where } h = {\left(\frac{a-b}{a+b}\right)}^2.\]
+
+&lt;p&gt;While exact on paper these don’t converge in general. We &lt;em&gt;can&lt;/em&gt; use them to approximate \(s\) by summing the first \(n\) terms of the power series. For example,&lt;/p&gt;
+
+\[s \approx 2a\pi\sum_{m=0}^n \left( {\left( \frac{(2m)!}{m!m!} \right)}^2 \frac{k^{2m}}{16^m (1-2m)} \right)~\text{ where } k = \sqrt{1 - \frac{b^2}{a^2}}.\]
+
+&lt;p&gt;The amended plot below shows that summing Maclaurin’s series to \(n = 6\) is comparable to our rough approximations.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/low%20approx%20(WPS)%20a%20=%205.png&quot; alt=&quot;Graph of error in the simple approximations up to a = 5 with power series added.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Similarly the plot below demonstrates that summing to \(n = 50\) is comparable to our higher accuracy approximations.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/high%20approx%20(WPS)%20a%20=%205.png&quot; alt=&quot;Graph of error in the better approximations up to a = 5 with power series added.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You might then think, okay, to find the exact circumference&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Just use a power series to a high number of terms (Disney-Hogg, 2021)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;but the practicalities turn out not to be so simple.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/truths%20a%20=%2080%20(10,%2010).png&quot; alt=&quot;Comparison of the error in Maclaurin's and Ivory's power series when summing to 10 terms up to a = 80.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The convergence rate of Maclaurin’s series is slow. &lt;em&gt;So&lt;/em&gt; slow in fact that the sum to \(n = 10\) terms already starts to diverge from the truth well before \(a = 20\) and is overestimating by 2.38% by the time \(a = 80\). Ivory’s series does fair far better, but for by \(a = 80\) for \(n = 10\) it’s also underestimating by 0.012%.&lt;/p&gt;
+
+&lt;p&gt;You might think, &lt;em&gt;maybe we just need higher&lt;/em&gt; \(n\)? Well we can push both power series to \(n = 258\) terms&lt;sup id=&quot;fnref:8&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt; and there &lt;em&gt;is&lt;/em&gt; improvement. For Maclaurin it’s hardly the dizzying accuracy we might have hoped for, still being off by about 0.01% at \(a = 80\). That’s barely better than summing 10 terms Ivory, showing just how slow Maclaurin converges.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/truths%20a%20=%2080%20(258,%20258).png&quot; alt=&quot;Comparison of the error in Maclaurin's and Ivory's power series when summing to 258 terms up to a = 80.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, even at \(a = 80\), \(n = 258\), Ivory is only producing an error of order \(10^{-11}\%\) which, let’s be fair, is pretty damn good. And that’s not even as far as we can take that series either! If we push it all the way to \(n = 507\) terms&lt;sup id=&quot;fnref:8:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;, at \(a = 80\) we’re still within machine-epsilon error which is amazing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/truths%20a%20=%20140%20(NA,%20507).png&quot; alt=&quot;Graph of the error in Ivory's power series when summing to 507 terms up to a = 140.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In fact at \(n = 507\) we don’t start seeing numerical error until \(a \approx 140\), well beyond our known most elliptic orbits.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss&quot;&gt;Carl Gauss&lt;/a&gt; (1812) &amp;amp; &lt;a href=&quot;https://en.wikipedia.org/wiki/Ernst_Kummer&quot;&gt;Eduard Kummer&lt;/a&gt; (1836)&lt;sup id=&quot;fnref:9&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:9&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt; showed these three series could all be expressed in terms of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hypergeometric_function&quot;&gt;hypergeometric function&lt;/a&gt;:&lt;/p&gt;
+
+\[\begin{align}
+    \text{Maclaurin}: s &amp;amp;\approx 2\pi a\cdot {}_2F_1\left(-\frac{1}{2}, \frac{1}{2}, 1, k^2\right) \\
+    \text{Euler}: s &amp;amp;\approx \pi\cdot {}_2F_1\left(-\frac{1}{4}, \frac{1}{4}, 1, \delta \right) \\
+    \text{Ivory}: s &amp;amp;\approx \pi(a+b)\cdot {}_2F_1\left(-\frac{1}{2}, -\frac{1}{2}, 1, h \right)
+\end{align}\]
+
+&lt;p&gt;This coupled with the close proximity between the two findings means Ivory’s series is usually referred to as the Gauss-Kummer series.&lt;/p&gt;
+
+&lt;p&gt;R’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hypergeo&lt;/code&gt; package can evaluate this function, only returning an answer when the terms have converged within machine-epsilon error. Comparisons throughout this work use that function with blind faith that it’s more efficient and accurate than the best power series approximation we were able to use.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-could-you-do-it-with-monte-carlo&quot;&gt;How could you do it with Monte Carlo?&lt;/h2&gt;
+
+&lt;p&gt;The idea behind &lt;a href=&quot;https://en.wikipedia.org/wiki/Monte_Carlo_integration&quot;&gt;Monte Carlo integration&lt;/a&gt; is simple. To approximate&lt;/p&gt;
+
+\[I = \int_0^\phi f(x){\mathrm{d}x}\]
+
+&lt;p&gt;we first plot \(f\) over \([0, \phi]\). Then we take \(N\) uniformly random points in a box \([0, \phi] \times [0,H]\) enclosing the plot, colouring them red if they fall below the integrand and blue if they fall above it. The integral approximation is then&lt;/p&gt;
+
+\[I \approx (\phi-0) \times (H-0) \times \frac{\#\text{red}}{N}.\]
+
+&lt;p&gt;As the total number of random points increases the approximation converges toward the true value.&lt;/p&gt;
+
+&lt;p&gt;At first glance our initial integral&lt;/p&gt;
+
+\[s = 4\int_0^a \sqrt{1 + \frac{b^2 x^2}{a^4 - a^2x^2}}{\mathrm{d}x}\]
+
+&lt;p&gt;isn’t lending itself to Monte Carlo integration. Not only do we have unknown \(a\) both in the integrand and in the limit, there’s also a lovely asymptote at \(x = a\). It’s not ideal for making a general tool.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/integrand-plot.png&quot; alt=&quot;Plot of the two key integrands.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On the other hand, the transformation of that integral&lt;/p&gt;
+
+\[s = 4a\int_0^{\frac{\pi}{2}} \sqrt{1 - k^2\sin^2\theta}~{\mathrm{d}\theta},\]
+
+&lt;p&gt;is far more inviting. The integrand plot can be enclosed by \([0,~\pi/2] \times [0,~1]\), making it a perfect candidate for doing Monte Carlo integration!&lt;/p&gt;
+
+&lt;p&gt;We coded up a simple function in R for doing this for arbitrary \(a\) and \(b\).&lt;/p&gt;
+
+&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;MonteCarlo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1e3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Given ellipse parameters 'a' and 'b' (where a &amp;gt;= b) and&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# sample count 'n' (default 1000) as inputs, this returns&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# an approximation of that ellipse's circumference using&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Monte Carlo with n samples. If (optional) bool 'graph'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# is TRUE (default FALSE) then a graph of the integrand&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# will be plotted.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# calculate ellipse eccentricity&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# upper integral limit, calculate 1/4 of ellipse then x4&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# integrand function, max of this is always 1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# generate random points in the box&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;runif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;runif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# true/false vector if each point was under graphs &lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;under_integrand&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# count the number of such points&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number_under_integrand&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;under_integrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# monte carlo estimation of the area under the graph&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number_under_integrand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# optional, graphs integrand and the approximation samples&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Figs/mc-graph.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;par&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;+0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# remove title space&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# trace out the integrand&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# obligatory red/blue MC graph points&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;under_integrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;under_integrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;under_integrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;under_integrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+               &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;blue&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev.off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# final result is 4a times the integral&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We’re not the first to apply Monte Carlo to this problem; Gary Gipson (1982) explored the idea more generally as part of his PhD thesis.&lt;sup id=&quot;fnref:10&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:10&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;To give a specific example, if we have \(a = 5\), \(b = 1\), our true circumference is \(21.01004\). Carrying out Monte Carlo integration might look as below.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/blogs/ellipses/mc-graph-points.png&quot; alt=&quot;Example Monte Carlo integration.&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/images/blogs/ellipses/convergence.png&quot; alt=&quot;Example Monte Carlo convergence.&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Example graph output from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MonteCarlo&lt;/code&gt; function.&lt;/td&gt;
+      &lt;td&gt;Example convergence plot as more samples are added.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In particular, the graph on the left approximates the ellipse’s circumference as&lt;/p&gt;
+
+\[s \approx 4a \times \left(\frac{\pi}{2}\times1\right) \times \frac{684}{684 + 316} = 21.48849,\]
+
+&lt;p&gt;meaning there’s about 2% error. To see how this compares in absolute value terms, the table below has all our approximations all side by side for varying \(a\).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(a = 1\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(a = 5\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(a = 20\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(a = 80\)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Arithmetic Average&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;18.84956&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;65.97345&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;254.4690&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Geometric Average&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.04963&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;28.09926&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;56.1985&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Euler Average&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;22.65435&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;88.96866&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;355.4584&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Ramanujan I&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.00560&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;80.24683&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;319.0854&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Ramanujan II&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.01003&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;80.38430&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320.0634&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Parker&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.282953&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.00714&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;80.17898&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;318.5687&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Lazy Parker&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.126106&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.20575&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;77.75442&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;303.9491&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Cantrell, \(p = 0.825\)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.00887&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;80.39483&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320.1485&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Maclaurin, \(n = 10\)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.18883&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;82.11027&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;327.7535&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Ivory, \(n = 10\)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.01004&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;80.38718&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320.0904&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Monte Carlo, \(N = 10^3\)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.283185&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;21.55133&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;80.42477&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;315.1646&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Truth&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;6.283185&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;21.01004&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;80.38851&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;320.1317&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We can see that Monte Carlo isn’t terrible, but it’s also not as good as some of even our more basic approximations like Parker. That begs the question…&lt;/p&gt;
+
+&lt;h3 id=&quot;why-use-monte-carlo-to-approximate-circumference&quot;&gt;Why use Monte Carlo to approximate circumference?&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/ellipses/comparison.png&quot; alt=&quot;Very vague comparison of all the different methods which has less legitimacy as a political compass graph.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Given Monte Carlo isn’t more efficient, more accurate, or simpler to state than any of the other approximations given here there’s not a clear reason to use it beyond academic curiosity. A better question though might be…&lt;/p&gt;
+
+&lt;h3 id=&quot;why-use-ellipses-to-demonstrate-monte-carlo&quot;&gt;Why use ellipses to demonstrate Monte Carlo?&lt;/h3&gt;
+
+&lt;!-- In truth, we were given a sheet of paper with a perfect binary tree and told to move left if heads, right if tale, and use that to track the progress. The rest of the story is truthful, but I figured that detail might complicate the story too much. --&gt;
+
+&lt;p&gt;Monte Carlo approximations aren’t difficult to understand; I’ve a memory of being taught the basics around Y8 (12 years old). We were given a coin to toss 100 times, recording the results and working out the approximate probability of heads by dividing the number of times it happened by 100. It’s not a very exciting demonstration, but it works.&lt;/p&gt;
+
+&lt;p&gt;That’s for showing it to a younger audience though, what about when you’re showing it to undergrads? The go-to examples are &lt;a href=&quot;https://maxmorganti.shinyapps.io/MonteCarloIntegration/&quot;&gt;integration&lt;/a&gt; or &lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Pi_30K.gif&quot;&gt;calculating \(\pi\)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As we did for our elliptic integral, given \(p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_0\) we can approximate \(\int_{x_1}^{x_2} p(x){\mathrm{d}x}\) by generating \(N\) uniform random points in a box bounding \(p\) between \(x_1\) and \(x_2\), counting the number of that fall below \(p\) and dividing that by \(N\). While the idea is still simple, it’s not exactly interesting and feels pretty redundant; polynomial integration can be done exactly and is borderline trivial for most undergrads. Even if \(p\) were to be more complicated, students will be painfully aware there are better approximation methods.&lt;/p&gt;
+
+&lt;p&gt;Approximating \(\pi\) has other problems. It’s still integral approximation at heart so it’s not complicated, but it has the aura of a pointless exercise. It &lt;em&gt;does&lt;/em&gt; have the advantage of being a well known constant and seeing the approximation converge is a neat demonstration, but how Monte Carlo is being used here is very specific to \(\pi\) and not widely applicable.&lt;/p&gt;
+
+&lt;p&gt;Putting aside that it’s not necessarily the best tool for the job, there are some benefits to using ellipse circumference in a Monte Carlo demonstration:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unlike approximating \(\pi\), the Monte Carlo integration method used is more widely applicable outside the given context;&lt;/li&gt;
+  &lt;li&gt;At the same time, unlike \(p(x)\), we don’t have an elementary integral so using an approximation method to find an answer is practical;&lt;/li&gt;
+  &lt;li&gt;That we don’t have an elementary equation for an ellipse’s circumference is interesting and not a fact all undergrads will have come across;&lt;/li&gt;
+  &lt;li&gt;The math needed to understand what’s going on is perfectly suited for early undergrads (arc length, integration by substitution, &lt;em&gt;etc&lt;/em&gt;), while not being out of reach for enthusiastic sixth-formers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A downside to bare in mind that it prompts the question, &lt;em&gt;‘why is this integral non-elementary?’&lt;/em&gt; to which there’s no easy answer; get your references to take higher year integrability courses at the ready!&lt;/p&gt;
+
+&lt;p&gt;That aside though, Monte Carlo Elliptic Integrals is a neat tool being applied to an cool problem in a way that’s both interesting and understandable. It’s a good motivator for why Monte Carlo methods might be useful in a practical setting while not presenting an application beyond the understanding of a novice mathematician.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;footnotes--references&quot;&gt;Footnotes &amp;amp; References&lt;/h3&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:0&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This post mirrors a talk I gave called &lt;em&gt;Monte Carlo Elliptic Integrals&lt;/em&gt; at the &lt;a href=&quot;https://www.maxwell.ac.uk/graduate-school/&quot;&gt;Maxwell Institute Graduate School&lt;/a&gt;’s PG Colloquium in October 2021. Thanks to &lt;a href=&quot;https://uk.linkedin.com/in/andrew-beckett-60048410b&quot;&gt;Andrew Beckett&lt;/a&gt; for working through the original integrations, &lt;a href=&quot;https://www.linkedin.com/in/linden-disneyhogg/&quot;&gt;Linden Disney-Hogg&lt;/a&gt; for his insights into integrability, &lt;a href=&quot;https://www.macs.hw.ac.uk/~chris/&quot;&gt;Chris Eilbeck&lt;/a&gt; for pointing me toward further research, and of course to Callie for introducing me to the problem. &lt;a href=&quot;#fnref:0&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Throughout we can center circles and ellipses on zero without loss of generality; relative position has no baring on circumference. Similarly, when working with ellipses we don’t have to concern ourselves with how they’re oriented. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;G. P. Michon, &lt;em&gt;Final Answers&lt;/em&gt;, ch. &lt;a href=&quot;https://www.numericana.com/answer/ellipse.htm&quot;&gt;Perimeter of an Ellipse&lt;/a&gt;. Numerica, 2004, most recently updated 2020. A fabulous literature review without which this post wouldn’t have been possible. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;M. Parker, &lt;em&gt;Why is there no equation for the perimeter of an ellipse!?&lt;/em&gt;, &lt;a href=&quot;https://www.youtube.com/watch?v=5nW3nJhBHL0&quot;&gt;YouTube&lt;/a&gt;, September 2020. Another great review of the topic and the source of Parker’s computationally optimized simple formulas. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;\(h\) crops up a lot but, according to Michon, it’s an unnamed quantity. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Jet Propulsion Laboratory, &lt;em&gt;C/1965 S1-A (Ikeya-Seki)&lt;/em&gt;, &lt;a href=&quot;https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=C%2F1965%20S1-A&quot;&gt;Small-Body Database&lt;/a&gt;, 2008. The source of the values in working out the orbit with the highest known eccentricity. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This is so perfectly close to Parker’s &lt;em&gt;‘ridiculous’&lt;/em&gt; value for \(a\) that I don’t know if it’s an intentional easter egg or just coincidence. &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Despite the name, the Gauss-Kummer series first appeared in a memoir of Scottish mathematician and University of Edinburgh alumni, Sir James Ivory: &lt;em&gt;A new series for the rectification of the ellipse&lt;/em&gt;, Transactions of the Royal Society of Edinburgh, vol. 4, no. II, pp. 177–190, 1796. &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:8&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;When coding these approximations we used &lt;a href=&quot;https://en.wikipedia.org/wiki/R_(programming_language)&quot;&gt;R&lt;/a&gt;; it made sense in the Monte Carlo context and it was what we’d for &lt;a href=&quot;https://github.com/Foggalong/shiny-decision-trees&quot;&gt;other aspects&lt;/a&gt; of the summer school. As a language though, it’s very limited in how it handles large numbers. In particular, using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;factorial&lt;/code&gt; to compute \(n!\) for \(n &amp;gt; 170\) just returns \(\infty\), a problem for Maclaurin since it includes a \((2n)!\) term. At face value we’re thus limited to summing the first \(n = 85\) terms, a problem given its slow convergence rate. It’s possible to improve that limit to \(n = 258\) using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choose&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lfactorial&lt;/code&gt;, though it’s arguable how useful that is given it’s still producing an error of \(10^{-3}\%\) compared to Ivory’s \(10^{-11}\%\). Ivory has an upper limit of \(n = 507\) before R gets angry for similar reasons, and that’s sufficient to handle to \(a\) up to 140. &lt;a href=&quot;#fnref:8&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:8:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:9&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;P. Abbot, &lt;em&gt;On the perimeter of an ellipse&lt;/em&gt;, &lt;a href=&quot;https://www.mathematica-journal.com/2009/11/23/on-the-perimeter-of-an-ellipse/&quot;&gt;The Mathematica Journal&lt;/a&gt;, vol. 11, no. 2, 2011. Originally &lt;a href=&quot;https://www.internationalmathematicasymposium.org/IMS2006/IMS2006_CD/articles/Abbott.pdf&quot;&gt;presented&lt;/a&gt; at the International Mathematica Symposium 2006. &lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:10&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;G. Gipson, &lt;em&gt;The Coupling of Monte Carlo Integration with the Boundary Integral Equation Technique to Solve Poisson Type Equations&lt;/em&gt;, &lt;a href=&quot;https://digitalcommons.lsu.edu/cgi/viewcontent.cgi?referer=&amp;amp;httpsredir=1&amp;amp;article=4716&amp;amp;context=gradschool_disstheses&quot;&gt;PhD Thesis&lt;/a&gt;, Louisiana State University, 1982. &lt;a href=&quot;#fnref:10&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="math" /><category term="teaching" /><summary type="html">At the 2021 Sutton Trust summer school a student asked us for help with an integral she’d been struggling with:</summary></entry><entry><title type="html">Reviving Wren</title><link href="http://localhost:4000/2021/09/09/wren.html" rel="alternate" type="text/html" title="Reviving Wren" /><published>2021-09-09T09:11:00+01:00</published><updated>2021-09-09T09:11:00+01:00</updated><id>http://localhost:4000/2021/09/09/wren</id><content type="html" xml:base="http://localhost:4000/2021/09/09/wren.html">&lt;p&gt;In the distant past of 2014 I set about &lt;a href=&quot;/2014/02/01/html.html&quot;&gt;learning HTML&lt;/a&gt;. Like the ambitious 18 year old I was, this quickly snowballed into building what I now know to be a &lt;a href=&quot;https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators&quot;&gt;static site generator&lt;/a&gt;. Considering my then relative lack of coding experience, much less HTML, it was ambitious, but through perseverance Wren was born.&lt;/p&gt;
+
+&lt;p&gt;Despite the development and maintenance overheads Wren served me well for a good while. Even though the aesthetic was a super basic and the syntax for writing posts was heckin’ clunky, I’d made a surprisingly featureful tool. All the now-standard bells and whistles were there, some of which were state-of-the-art in 2014 like &lt;a href=&quot;https://blog.medium.com/read-time-and-you-bc2048ab620c&quot;&gt;reading times&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;a href=&quot;https://www.wpbeginner.com/wp-tutorials/how-to-make-separate-rss-feed-for-each-category-in-wordpress/&quot;&gt;per tag RSS&lt;/a&gt;&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Eventually though I had to let it go. Every time I went to write a blog I had to fix bugs first and it eventually reached the point where I was spending more time on maintenance than writing. In searching for an alternative I found the then-startup &lt;a href=&quot;https://en.wikipedia.org/wiki/Ghost_(blogging_platform)&quot;&gt;Ghost&lt;/a&gt;; it used markdown, was open source, and could be self-hosted, promising simplicity so its users could just focus on writing.&lt;/p&gt;
+
+&lt;p&gt;I &lt;a href=&quot;/2016/01/19/the-archive.html&quot;&gt;switched&lt;/a&gt; to Ghost 0.x and all those maintenance worries melted away.&lt;/p&gt;
+
+&lt;h2 id=&quot;end-of-life&quot;&gt;End of Life&lt;/h2&gt;
+
+&lt;p&gt;Fast forward to 2021 when Ghost 2.x just reached EOL and &lt;a href=&quot;https://ghost.org/changelog/4/&quot;&gt;4.x&lt;/a&gt; isn’t looking so simple anymore. With the independent explosions of Medium and static site generators, the developers have understandably shifted their focus to bigger multi-author blogs-as-a-business. It’s still self hosted and open source, but that’s a lot of features I won’t be using weighing it down. So what do?&lt;/p&gt;
+
+&lt;p&gt;In walks &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. I’d been doing some design work for &lt;a href=&quot;https://justdeleteme.xyz&quot;&gt;JustDeleteMe.xyz&lt;/a&gt; and had gotten to grips with Jekyll so I could check things were still working on my local build. I’d toyed with it &lt;a href=&quot;https://pipeseroni.github.io/&quot;&gt;in&lt;/a&gt; &lt;a href=&quot;https://numixproject.github.io/&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;https://foggalong.github.io/web/muqc/index.html&quot;&gt;past&lt;/a&gt; but never went past using one of the default themes. This work with JDM gave me a taste of how easy it was to build on and customise.&lt;/p&gt;
+
+&lt;p&gt;Over the last couple of weeks I’ve been tinkering with Jekyll’s &lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima theme&lt;/a&gt; and my old &lt;a href=&quot;https://github.com/Foggalong/Wren/releases/tag/v0.2-beta&quot;&gt;Wren 0.2&lt;/a&gt; code and they’ve given birth the the wonderful &lt;a href=&quot;https://github.com/Foggalong/Wren/releases/tag/v0.3-beta&quot;&gt;Wren 0.3&lt;/a&gt;. It’s a Jekyll theme styled like my old Wren CSS with &lt;a href=&quot;https://github.com/Shopify/liquid&quot;&gt;Liquid&lt;/a&gt; files replicating many of the features Wren had.&lt;/p&gt;
+
+&lt;h2 id=&quot;shoulders-of-giants&quot;&gt;Shoulders of Giants&lt;/h2&gt;
+
+&lt;p&gt;While some of these features are novel implementations, most are based on FOSS plugins by other developers. As well as &lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima&lt;/a&gt; there’s code based on &lt;a href=&quot;https://github.com/risan/jekyll-reading-time&quot;&gt;reading time&lt;/a&gt;, &lt;a href=&quot;https://github.com/nathancy/jekyll-embed-video&quot;&gt;video embeds&lt;/a&gt;, &lt;a href=&quot;https://superdevresources.com/tag-cloud-jekyll/&quot;&gt;tag cloud&lt;/a&gt;, and more. Even the icons are a mix of those I’ve made and modified ones from &lt;a href=&quot;https://github.com/Rush/Font-Awesome-SVG-PNG&quot;&gt;Font Awesome&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It speaks to a bigger shift in my mentality between 2014 and today. Then I saw value only in building from the ground up; it wasn’t enough to write the blog content, or even the CSS to theme it, I had to write &lt;em&gt;everything&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In 2021 though? I still do think that starting from scratch can be a useful learning exercise and it’s great at teasing out new approaches to problems, but I’m also much more accepting of the benefit of building on the work of other people. There’s no sense reinventing the wheel for the sake of it.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;You can find &lt;a href=&quot;https://github.com/Foggalong/Wren&quot;&gt;Wren on GitHub&lt;/a&gt; to see behind the scenes and find out how it all works. Apologies if the switch to Wren has broke your RSS subscription or old hyperlinks (I couldn’t find a way to redirect those gracefully) but I hope you’ll agree that the refreshed design is worth it!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Displaying the time it takes to read a post in the header was a feature only popularised by Medium the year before. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;To my knowledge, even now no blogging platform or site generator provides this by default or through first party plugins. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="coding" /><category term="blog" /><summary type="html">In the distant past of 2014 I set about learning HTML. Like the ambitious 18 year old I was, this quickly snowballed into building what I now know to be a static site generator. Considering my then relative lack of coding experience, much less HTML, it was ambitious, but through perseverance Wren was born.</summary></entry><entry><title type="html">Lessons from Hybrid Tutoring</title><link href="http://localhost:4000/2021/06/14/edta3.html" rel="alternate" type="text/html" title="Lessons from Hybrid Tutoring" /><published>2021-06-14T17:52:00+01:00</published><updated>2021-06-14T17:52:00+01:00</updated><id>http://localhost:4000/2021/06/14/edta3</id><content type="html" xml:base="http://localhost:4000/2021/06/14/edta3.html">&lt;p&gt;&lt;em&gt;Written for my AFHEA application, demonstrating professional values V2 and V3.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The pandemic was the defining feature of the 2020/21 academic year, impacting teaching activities throughout. My semester 1 tutoring was delivered through two different ‘hybrid’ models; both involved teaching everyone online whenever COVID restrictions required, but differed in how in-person tutoring was delivered outside that. The first saw tutors work with students in a classroom and online simultaneously, while the second moved students between separate in-person and online groups week-to-week based on need.&lt;/p&gt;
+
+&lt;p&gt;Having done online tutoring in 2019/20 semester 2 and over summer with Sutton Trust definitely proved beneficial for the online aspects; expectations for webcam uptake were managed and the necessary tools were familiar, which made focusing on engaging students in the topic easier. Discussions were generally quieter but students did collaborate some on shared virtual whiteboards, an idea taken from a Teaching Cafe &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. The in-person aspects weren’t so straight forward, with both hybrid models having pros and cons.&lt;/p&gt;
+
+&lt;p&gt;The first method was logistically difficult for tutors but easier to timetable. Without live video capture, finding a method of delivery which was engaging for those in person while still accessible to those online proved tricky. After talking with other tutors and trialing setups involving webcams pointed at physical whiteboards, we settled on using Teams’ virtual whiteboard with students in the classroom bringing their own laptops for access. Anecdotal feedback from students in-person unfortunately suggests this still wasn’t a great experience.&lt;/p&gt;
+
+&lt;p&gt;The second method gave a better learning environment for those in-person but made timetabling confusing. There was a less consistent group dynamic since attendance changed weekly, but those who attended all semester benefited. Making use of physical space within restrictions did prove problematic; social distancing necessitated more out-loud discussion than normal, when sharing notes might have been possible. This was incorporated into my teaching by delivering chalk-and-talk style workshops but with regular pauses to ask and discuss what would come next in the working.&lt;/p&gt;
+
+&lt;p&gt;Another delivery method I tried (inspired by workshops from my undergrad) had students come to the whiteboard to talk through a question they felt comfortable with. I stepped aside while a student talked the group through synthetic division, which is part of the Higher syllabus in Scotland but not usually part of A Levels. On that occasion this worked, but feasibility depended largely on environment (e.g. are disinfectant wipes available, is there enough space, etc).&lt;/p&gt;
+
+&lt;p&gt;Semester 2 of 2020/21 was an entirely online affair, but I hope to take learnings from this hybrid teaching, particularly around tools and accessibility, into my 2021/22 tutoring.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;School of Maths’ Teaching Cafe on June 25th, 2020, focusing on how Zoom’s whiteboard feature (and others like it) might be used for online workshops. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="math" /><category term="teaching" /><summary type="html">Written for my AFHEA application, demonstrating professional values V2 and V3.</summary></entry><entry><title type="html">A Foray into Remote Teaching</title><link href="http://localhost:4000/2020/08/11/edta2.html" rel="alternate" type="text/html" title="A Foray into Remote Teaching" /><published>2020-08-11T20:01:00+01:00</published><updated>2020-08-11T20:01:00+01:00</updated><id>http://localhost:4000/2020/08/11/edta2</id><content type="html" xml:base="http://localhost:4000/2020/08/11/edta2.html">&lt;p&gt;&lt;em&gt;Written for my AFHEA application, demonstrating professional values V1 and V4.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In summer 2020 I was given the opportunity to prepare and deliver content as part of a summer school through the Sutton Trust, a charity aiming to improve social mobility in higher education. As a student from a working class background who benefited from Sutton’s work way back in 2012, this was an especially exciting opportunity for me.&lt;/p&gt;
+
+&lt;p&gt;Due to the ongoing COVID pandemic many adjustments had to be made to the usual programme. The premise was that for each topic students would be sent a pre-recorded lecture and a problem sheet to complete. They would then get together with the tutors for a video call to talk through the solutions and discuss the topic more generally.&lt;/p&gt;
+
+&lt;p&gt;Each topic was developed by pairs of tutors; I covered machine learning alongside Bella Deutsch, with a focus on decision trees. These are taught from SQCF 8 &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; which fulfilled the criteria of being undergrad-level mathematics students wouldn’t have seen before. To keep it accessible the problems we gave centred around formula usage rather than fully constructing trees from scratch.&lt;/p&gt;
+
+&lt;p&gt;With widespread remote teaching still novel there was a lot of uncertainty about how well this new format would work. To learn what was being done elsewhere in the University I attended several staff discussions at the School of Math’s Teaching Cafe &lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. These proved very useful since small group teaching has been a frequent topic of discussion recently.&lt;/p&gt;
+
+&lt;p&gt;As with all online endeavours, the summer school wasn’t without hiccups; on day 1 a system glitch left students without access to the content. This had been resolved by day 3 when we had our call but a significant number of students still hadn’t accessed our topic’s content. Acknowledging that a pandemic perhaps doesn’t make for the best work environment, we adjusted our discussion in the moment to include those who hasn’t done the worksheet. Just because a student didn’t manage to work before the deadline, it doesn’t mean they don’t want to learn; we saw the highest spike in user traffic for the online portion of our worksheet in the day after the video call ended.&lt;/p&gt;
+
+&lt;p&gt;Despite last minute changes the discussion group was great fun! Most tutors across the summer school reported difficulties engaging students in verbal discussion (and for safeguarding reasons students weren’t allowed to use webcams), but we had reasonable success getting them to discuss and answer questions in the chat box. After the session was over, two also stuck around to talk (via voice, not chat!) more about AI and the current areas of research.&lt;/p&gt;
+
+&lt;p&gt;Teaching online definitely has its hurdles and it’s certainly going to be an exercise in developing new best practices around new modes of delivery. However, as long as we are able and willing to adjust expectations and adapt accordingly we can still provide a quality learning experience to students.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;MAEE08002 Techniques of Management module in the School of Engineering. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;School of Maths’ Teaching Cafes on June 18th for course delivery and June 25th on workshops. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="math" /><category term="teaching" /><summary type="html">Written for my AFHEA application, demonstrating professional values V1 and V4.</summary></entry><entry><title type="html">Tutoring in Disruptive Times</title><link href="http://localhost:4000/2020/05/26/edta1.html" rel="alternate" type="text/html" title="Tutoring in Disruptive Times" /><published>2020-05-26T14:09:00+01:00</published><updated>2020-05-26T14:09:00+01:00</updated><id>http://localhost:4000/2020/05/26/edta1</id><content type="html" xml:base="http://localhost:4000/2020/05/26/edta1.html">&lt;p&gt;&lt;em&gt;Written for my AFHEA application, demonstrating professional values V1 and V3.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;My teaching this year included workshops for first year calculus, working with two groups of about ten University of Edinburgh students. This was intended to be done almost entirely in-person, with students meeting to discuss that week’s problems and submit physical copies of homework. However, events both in the academic community (the UCU strikes from late February to mid March) and the wider world (the COVID-19 global pandemic) meant that it was necessary to do a great deal of adapting to changing circumstances.&lt;/p&gt;
+
+&lt;p&gt;In the lead up to the strikes I had honest conversations with students about the issues at hand, which was positively received. I want academia to be a great place of employment for all and the widening casualisation of jobs is an issue I care deeply about. As per UCU’s agreement with the university I continued to mark assessments, and I also took students’ questions by email.&lt;/p&gt;
+
+&lt;p&gt;Assessment completion remained pretty consistent during the strikes, prompted by emails from both myself and the course administrator, but engagement with the content which ordinarily would have been covered in workshop dropped significantly. I think this could be due to only passing mentions of the workshops in emails; asking starter questions about that content (e.g. querying understanding of a theorem) may have encouraged more discussion there.&lt;/p&gt;
+
+&lt;p&gt;Again when campus closed due to the pandemic I continued to take homework and questions by email, with the addition of a Piazza online forum where students could also discuss the course and ask questions. Learning from the experience of the strikes, this time I managed to engage several students in longer discussions about the course content, helping to develop the ‘how’ and ‘why’ behind methods discussed. This was as simple as giving pointers in my feedback and making it clear more information was available (e.g. “If you would like to know more just let me know!”).&lt;/p&gt;
+
+&lt;p&gt;This disruption, particularly the pandemic which saw many students moving across the world, made maintaining tutor-tutee relationships difficult. Several students ran into difficulties around timezones and others from unexpected caring commitments. I endeavoured to make adjustments where possible, providing assistance around work, signposting support channels when appropriate, and checking on students who unexpectedly stopped engaging. The training which we received prior to starting proved helpful here; as well as establishing best practices for delivering workshops, it outlined what is and isn’t within our control as tutors and the importance of that relationship.&lt;/p&gt;
+
+&lt;p&gt;Toward the end of the semester one of my students emailed me thanking for the semester and asking for reading recommendations around an area which happened to be my own area of research. We had a chat by email about what I did as a PhD student and I pointed them in the direction of books and course materials which I’ve found useful. It was a heartening end to the term and a welcome reminder of the difference tutoring can make.&lt;/p&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="math" /><category term="teaching" /><summary type="html">Written for my AFHEA application, demonstrating professional values V1 and V3.</summary></entry><entry><title type="html">The Year That Was 2018</title><link href="http://localhost:4000/2019/01/24/the-year-tha.html" rel="alternate" type="text/html" title="The Year That Was 2018" /><published>2019-01-24T16:25:00+00:00</published><updated>2019-01-24T16:25:00+00:00</updated><id>http://localhost:4000/2019/01/24/the-year-tha</id><content type="html" xml:base="http://localhost:4000/2019/01/24/the-year-tha.html">&lt;p&gt;Holy wow its been over a year. That sure passed fast. Time to delve in and see how things went last year and what I want for the year to come. Like a perfectly cut avocado this post is coming to you in two parts.&lt;/p&gt;
+
+&lt;h2 id=&quot;2018&quot;&gt;2018&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2018/01/01/the-year-that-was-2017.html&quot;&gt;Last year&lt;/a&gt; I changed tactics slightly and, alongside some traditional big goals, what I really wanted was to form healthy habits. These were tracked using a great little (open source!) app called Loop.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;habits&quot;&gt;Habits&lt;/h3&gt;
+
+&lt;p&gt;Full disclaimer: for most all habits I didn’t actually meet the &lt;em&gt;‘85% of days’&lt;/em&gt; goal set. In hindsight focusing on forming the habits was more important meeting an unambiguous (but arbitrary) win condition. With that in mind, this year was still a success in my eyes for most the habits I wanted to form. As the year went on I only got better at sticking to them and this has continued through January.&lt;/p&gt;
+
+&lt;p&gt;A big win for me personally has been regular diary updates. It was only sporadically updated in 2017 but by the end of 2018 it was such a regular part of my life that I was actually surprised when I hadn’t updated it the evening before. Looking back at the last two years of entries has also become an unexpected pleasure each night before bed.&lt;/p&gt;
+
+&lt;p&gt;Creative writing has definitely been the most difficult to get into, even though it’s something I’ve done a lot in the past. While I’ve occasionally done some scribblings and I had a half hearted bash at NaNoWrioMo I just haven’t made time for it that it needs.&lt;/p&gt;
+
+&lt;h3 id=&quot;bigger-goals&quot;&gt;Bigger Goals&lt;/h3&gt;
+
+&lt;p&gt;On the bigger goals things are a mixed bag, but on the whole looking more positive. Through the tail end of third year I mostly managed to keep on top of assignments and definitely more so going into fourth year. I finished third year with a respectably high 2:1 too; while semester 1 was disappointing I’m happy with how things are going now.&lt;/p&gt;
+
+&lt;p&gt;As I say, writing has been difficult. I crashed out of NaNoWriMo pretty early and this blog has been pretty stagnant throughout the year. Reading went better; I didn’t hit the goal, but 13,700 pages over 44 books is nothing to sniff at. This goal was actually on track for most the year, only trailing off in final couple months.&lt;/p&gt;
+
+&lt;p&gt;Worries that running a half-marathon would be a low-ball goal were ill-founded. It was incredibly gruelling but on the hottest day of 2018 I completed the Manchester half marathon in a not-terrible ~2 hours time! The goal of reaching out more&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; was unfortunately less well done for the most part.&lt;/p&gt;
+
+&lt;h2 id=&quot;2019&quot;&gt;2019&lt;/h2&gt;
+
+&lt;p&gt;Recall that my 2018 goals were split into three broad areas: academic, creative, and health. For 2019 I’m adding a fourth category which is basically my general theme for the year: quitting.&lt;/p&gt;
+
+&lt;h3 id=&quot;quitting&quot;&gt;Quitting&lt;/h3&gt;
+
+&lt;p&gt;For a long time my friends have known me as someone who “does too much”. At pretty much every point in my life I’ve got involved with a load of different activities, for better and for worse. Going into 2019 I want to be more selective with how I spend my time&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. It’s not necessarily even that I don’t enjoy some of what I’ll step back from, I just want more space to enjoy what I keep. This is something which started toward the end of last year but will continue I hope.&lt;/p&gt;
+
+&lt;p&gt;In addition to carrying on the 2018 habits, I’m adding to Loop several “bad habits” I want to stop or reduce. These include social media time, ordering take out, eating meat, and drinking alcohol.&lt;/p&gt;
+
+&lt;h2 id=&quot;bigger-goals-again&quot;&gt;Bigger Goals Again&lt;/h2&gt;
+
+&lt;p&gt;On these I’m obviously looking toward to (finally) ending my undergrad and want to be doing something productive come September. I would love to graduate with more than 70% and it’s something that I’ve really worked toward these last few months. Fingers crossed I get there! I’m also hoping to read War and Peace as part of the subreddit &lt;a href=&quot;https://reddit.com/r/ayearofwarandpeace&quot;&gt;r/ayearofwarandpeace&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Making use of my creative outlets is something I want to work on so there’s a hell of a lot on the creative side. I’m reaffirming the goal to publishing something at least once per month with an addition to work on a new icon every day&lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. The goal to read more than 52 books &lt;em&gt;and&lt;/em&gt; 15,000 pages is also back, with a slightly bumped up page count. I’d love to complete NaNoWriMo but without knowing what I’ll be doing come November that’s a less certain one.&lt;/p&gt;
+
+&lt;p&gt;Continuing the trend of roughly doubling how far I can run each year, now I’m aiming to complete a marathon! My running petered off a little toward the end of last year so looking forward to getting back into it. Similarly did quidditch; at the 18/19 Regionals I played for Manchester’s 2nd team. I really want to get back and make the 1st team for BQC given it could be the last tournament I play at Manchester.&lt;/p&gt;
+
+&lt;p&gt;While the quitting theme is more something I’m expecting to work out as I go along, a very know-it-when-you-see-it theme, one big one I already know I’m planning on doing is stepping back from r/up&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;. There’s also an idea for Lent which I’m still musing over.&lt;/p&gt;
+
+&lt;p&gt;In short though things are good! There’s a lot to look forward to personally in 2019 and I’m excited to see how it goes.&lt;/p&gt;
+
+&lt;p&gt;-Josh&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Available on &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.isoron.uhabits&quot;&gt;Google Play&lt;/a&gt; and &lt;a href=&quot;https://f-droid.org/en/packages/org.isoron.uhabits/&quot;&gt;F-Droid&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Added late January in &lt;a href=&quot;/2018/01/21/the-forgotten-resolution.html&quot;&gt;this post&lt;/a&gt;. The only other goal added after the fact and mentioned in neither post was to form a habit of Brain Training daily. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This vaguely includes what I talked about in &lt;a href=&quot;/2016/05/24/trouble-letting-go.html&quot;&gt;Trouble Letting Go&lt;/a&gt; a few years back, though I am a lot better in that specific regard. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Mostly doing them as part of &lt;a href=&quot;https://numixproject.org&quot;&gt;Numix&lt;/a&gt;. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This was largely underway already at time of writing. I dare say a post about it will come later. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="resolutions" /><summary type="html">Holy wow its been over a year. That sure passed fast. Time to delve in and see how things went last year and what I want for the year to come. Like a perfectly cut avocado this post is coming to you in two parts.</summary></entry><entry><title type="html">The Resolution that Josh Forgot</title><link href="http://localhost:4000/2018/01/21/the-forgotten-resolution.html" rel="alternate" type="text/html" title="The Resolution that Josh Forgot" /><published>2018-01-21T14:21:00+00:00</published><updated>2018-01-21T14:21:00+00:00</updated><id>http://localhost:4000/2018/01/21/the-forgotten-resolution</id><content type="html" xml:base="http://localhost:4000/2018/01/21/the-forgotten-resolution.html">&lt;p&gt;There’s a resolution that I forgot to put in my &lt;a href=&quot;/2018/01/01/the-year-that-was-2017.html&quot;&gt;new years post&lt;/a&gt;. It’s not a small one so I’m not entirely sure how it slipped my mind. The short of it:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;When something makes me think about a friend I’ve not seen or spoken to in a while, I want to message that friend. Don’t just do nothing.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For the long of it, read on.&lt;/p&gt;
+
+&lt;p&gt;Last April I got the train back from Manchester to Sheffield to go to my friend &lt;a href=&quot;https://twitter.com/drsamtam&quot;&gt;Sam’s&lt;/a&gt; birthday. It’s one of the things I love about living here: I’m only ever an hour from home, which makes seeing family and friends so much easier than if I had chosen Edinburgh as my insurance.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; As a good example, recently my Grandma had a period of bad health and I was able to come home pretty much weekly with no reason other than to visit her.&lt;/p&gt;
+
+&lt;p&gt;But I digress. I’d got off the train and found myself with a couple of hours to spare. There’s no shortage of free things to do in Sheffield so I figured I’d wander around for a bit and see what took my fancy. Almost immediately though I bumped into &lt;a href=&quot;https://twitter.com/Tintachan&quot;&gt;Anita&lt;/a&gt;, a long time friend&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; who I’d not properly hung out with since we left for University nearly 4 years prior. We both had some time to spare so we went to a coffee shop[^n] for a catchup.&lt;/p&gt;
+
+&lt;p&gt;There we talked about a lot of the goings on in our lives, things that we’d not talked about in years. A big topic was how what had happened to us was common with other friends too. Once at uni we’d stopped talking to friends from home as much, if not completely, even though we still considered them friends and part of our respective lives. Part of this is down to built up contact anxiety (&lt;em&gt;I’ve not messaged them in years, will it be weird if I message them now?&lt;/em&gt;) but we had another thought.&lt;/p&gt;
+
+&lt;p&gt;As old and fuddy duddy as it sounds, we attributed this mainly to social media. Hear us out. While these tools have allowed for easier communication between friends it’s also made it even easier to be a passive friend. You’ll see updates on their life on Facebook or their opinions on the latest political drama on Twitter and feel like you’re in touch with them. This is regardless of whether that interaction actually two-way or only one.&lt;/p&gt;
+
+&lt;p&gt;We both came away from that meet saying that we’d do more to keep in touch with friends that we hadn’t over the last few years. I don’t know about Anita, but for me this was largely forgotten and not done for most of 2017. Moments would come and go and friends would go on uncontacted. Everything stayed the same.&lt;/p&gt;
+
+&lt;p&gt;This year I want to make a change. When one of my friends is having a bad day I want to actually reach out rather than just giving them a sympathy 😢 react. If a friend has a view I disagree with I want to tell them why I disagree with them and engage in that debate. If I see or do something which reminds me of a friend I want to message them and tell them about it.&lt;/p&gt;
+
+&lt;p&gt;I’ve already started this a little bit, but as they year goes on there’ll only be room for more. 2018 will not be another year like the last five. This year I’m resolving to change this habit and hopefully strengthen my long term friendships as a result.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Despite loving it now, Manchester was actually my 7th choice of University once you count international and pre-application choices. I’ll talk about my University application story at some point because I know mine is atypical. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;It’s been 7 years now. SEVEN YEARS. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="resolutions" /><summary type="html">There’s a resolution that I forgot to put in my new years post. It’s not a small one so I’m not entirely sure how it slipped my mind. The short of it:</summary></entry><entry><title type="html">Doctor Who, Series 10</title><link href="http://localhost:4000/2018/01/14/doctor-who-series-10.html" rel="alternate" type="text/html" title="Doctor Who, Series 10" /><published>2018-01-14T14:17:00+00:00</published><updated>2018-01-14T14:17:00+00:00</updated><id>http://localhost:4000/2018/01/14/doctor-who-series-10</id><content type="html" xml:base="http://localhost:4000/2018/01/14/doctor-who-series-10.html">&lt;p&gt;&lt;em&gt;The blog contains major &lt;a href=&quot;/2017/08/07/how-to-make-spoiler-tags-in-ghost.html&quot;&gt;untagged&lt;/a&gt; spoilers!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We’re back in the TARDIS for the final series with Capaldi, but also the last with Moffat as head writer. While Moffat penned some of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Blink_(Doctor_Who)&quot;&gt;best&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Heaven_Sent_(Doctor_Who)&quot;&gt;episodes&lt;/a&gt; of new-Who, and I &lt;a href=&quot;https://fogg.me.uk/2016/01/10/doctor-who-series-9/&quot;&gt;personally thought series 9 was pretty good&lt;/a&gt;, there’ve undeniably been some pretty serious faults over his tenure. Can he redeem himself before departing? Can he actually write a reasonable arc that doesn’t descend into shit? Well let’s find out. Once more unto the vortex, dear friends!&lt;/p&gt;
+
+&lt;h3 id=&quot;predictable-pilot-1&quot;&gt;Predictable Pilot? (&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Pilot_(Doctor_Who)&quot;&gt;1&lt;/a&gt;)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+
+&lt;p&gt;I straight away I fell in love with the character of Bill and appreciate that we’re finally deviating from what has been the recent companion norm. The Doctor as a lecturer works brilliantly to the point where I can’t believe it’s taken us 10 years to see it. I would have liked to see more of the Doctor being confined to Earth, which was what I thought we were getting here. It’s an interesting idea and not something we’ve really seen done for more than a few episodes at a time. Even though we were hitting on the same “companion introduction” story beats, there was enough fresh material here to keep me entertained.&lt;/p&gt;
+
+&lt;h3 id=&quot;deja-who-2-3&quot;&gt;Deja Who (&lt;a href=&quot;https://en.wikipedia.org/wiki/Smile_(Doctor_Who)&quot;&gt;2&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Thin_Ice_(Doctor_Who)&quot;&gt;3&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;p&gt;It’s at this point in the series (quite early on in retrospect) that I realised we were revisiting a lot of plot ideas we’ve used in the past. It’s all been done before; reflection monsters, abandoned colony planets, monsters in the Thames, and by god if I have to sit through another “Victorian London at Christmas time” episode I’m gonna scream. The episodes itself weren’t awful (I particularly liked Smile’s Black Mirror vibe) but I’m just sick of the settings at this point. While especially apparent in these first three it continues for the rest of the series.&lt;/p&gt;
+
+&lt;h3 id=&quot;who-horror-4-5&quot;&gt;Who Horror (&lt;a href=&quot;https://en.wikipedia.org/wiki/Knock_Knock_(Doctor_Who)&quot;&gt;4&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Oxygen_(Doctor_Who)&quot;&gt;5&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;p&gt;Another theme becoming apparent in the series are darker, more horror-like storylines than we’ve had thus far. That doesn’t necessarily equal good though. The suspense in Knock Knock was over too quickly, the reveals were too obvious, and none of it ended up having any pay off anyway. Oxygen faired much better with a Black Mirror type theme of bashing capitalism. For a children’s TV show it was a remarkably good deconstruction of why unfettered capitalism is bad. The Doctor having permanent repercussions &lt;em&gt;to himself&lt;/em&gt; from an act of heroism was a novel idea too but dear lord why all the cheese and reveal.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-monks-trilogy-6-7-8&quot;&gt;The Monks Trilogy (&lt;a href=&quot;https://en.wikipedia.org/wiki/Extermis_(Doctor_Who)&quot;&gt;6&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Pyramid_at_the_End_of_the_World&quot;&gt;7&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Lie_of_the_Land&quot;&gt;8&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;p&gt;This whole idea of the Monks was ill formed and sat weirdly with me. In the first episode the plot around the Vatican felt messy &amp;amp; unpolished and the second episode felt largely inconsequential; those events could have been included in the first. It started to improve from the ending of that and going into the third, though I’ll try not to read too much into what effect the change of writer and director had in that regard. The dystopian future under the Monks was intriguing, though with striking similarities of the dystopian future under the Master from Martha Jones’ era. Despite that there was a good amount of clever writing going on and Missy was killing it as always.&lt;/p&gt;
+
+&lt;h3 id=&quot;dismal-duds-9-10&quot;&gt;Dismal Duds (&lt;a href=&quot;https://en.wikipedia.org/wiki/Empress_of_Mars&quot;&gt;9&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Eaters_of_Light&quot;&gt;10&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;p&gt;Both these episodes felt bland and didn’t really manage to hold my interest, with Eaters in particular being predictable and contrived throughout. There were a few nice references here and there but for the most part the only redeeming feature was Missy.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-final-finale-11-12&quot;&gt;The Final Finale (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Enough_and_Time_(Doctor_Who)&quot;&gt;11&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Doctor_Falls&quot;&gt;12&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;p&gt;This is actually pretty cool. Having the black hole mess with time is new and interesting, and Missy flaunting around as the Doctor was a lovely exercise in self-referential humour. I was so focused on the the fact that them being Cyberman so obvious that the true Master twist caught me completely off guard. Even beyond that, I really dug the callbacks to old Who throughout and some of the writing was really clever. Can we please stop giving the companions extra live though? I thought we’d finally got off that train when Clara left. It really took the punch out of what was an otherwise decent finale.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-two-doctors-again-x&quot;&gt;The Two Doctors… again (&lt;a href=&quot;https://en.wikipedia.org/wiki/Twice_Upon_a_Time_(Doctor_Who)&quot;&gt;X&lt;/a&gt;)&lt;/h3&gt;
+
+&lt;p&gt;Having two Doctors using a different actor rather than CGI, the older actors, or editing trickery was a brilliant idea and something I really hope we see more of. The Brigadiers story line was kinda inconsequential but worth it for the emotional payoff. I’m glad they went for a &lt;em&gt;slightly&lt;/em&gt; more understated farewell than we got with David Tennant, even with Clara being shoe horned in there.&lt;/p&gt;
+
+&lt;iframe class=&quot;video-embed&quot; alt=&quot;Twice Upon A Time \| The Who Review&quot; title=&quot;Twice Upon A Time \| The Who Review&quot; src=&quot;https://youtube.com/embed/Y0Q-kJS9BP4&quot; width=&quot;500px&quot; height=&quot;281px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; autoplay=&quot;falsewebkitallowfullscreen&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;I talk about this episode (and Moffat’s tenure) in more detail with &lt;a href=&quot;https://www.youtube.com/c/KitFox&quot;&gt;Kit&lt;/a&gt; and &lt;a href=&quot;https://www.youtube.com/c/drsamtam&quot;&gt;Sam&lt;/a&gt; in my long-time-coming début on the &lt;a href=&quot;https://www.youtube.com/playlist?list=PLCRAAGGx-3z5tvicOznIhzcEY1xB9LkZT&quot;&gt;Who Review&lt;/a&gt;. It’s a great episode so check that out!&lt;/p&gt;
+
+&lt;h2 id=&quot;overall-thoughts&quot;&gt;Overall Thoughts&lt;/h2&gt;
+
+&lt;p&gt;All in all very much a mixed bag. Some moments shone through, Bill was amazing, and there were some good endings to these episodes that were just ruined with cheese. The use of cliff hanger endings to keep the viewer going instead of relying on the honestly intriguing Missy story arc was disappointing too.&lt;/p&gt;
+
+&lt;p&gt;Peter Capaldi truly has been the king of one liners though, and I think I’m gonna miss him as a Doctor. Moffat less so, though I genuinely do hope he continues to write the occasional episode because those one-off-outings were when he was at his best.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;I intentionally left out &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Return_of_Doctor_Mysterio&quot;&gt;Mysterio the Mundane&lt;/a&gt;; it was horribly cliched and more than anything  just felt like a cheap cash in on the superhero hype that’s been gripping the film industry. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="review" /><summary type="html">The blog contains major untagged spoilers!</summary></entry><entry><title type="html">The Year That Was 2017</title><link href="http://localhost:4000/2018/01/01/the-year-that-was-2017.html" rel="alternate" type="text/html" title="The Year That Was 2017" /><published>2018-01-01T14:11:00+00:00</published><updated>2018-01-01T14:11:00+00:00</updated><id>http://localhost:4000/2018/01/01/the-year-that-was-2017</id><content type="html" xml:base="http://localhost:4000/2018/01/01/the-year-that-was-2017.html">&lt;p&gt;Time once again for another year in review. Like my love of the Bourne series, this comes to you in two parts.&lt;/p&gt;
+
+&lt;h2 id=&quot;2017&quot;&gt;2017&lt;/h2&gt;
+
+&lt;p&gt;Reading back over my &lt;a href=&quot;https://fogg.me.uk/2017/01/01/the-year-that-was-2016/&quot;&gt;2016&lt;/a&gt; post it doesn’t feel like much has changed. In fact, it might actually be worse. I’ve spent a large proportion of the last few months feeling unwell, I’m not enjoying my degree, my grades fell short of what I’d hoped for, and if one more person tells me I look tired I swear to god I’m just gonna go to sleep right then and there. It would be dishonest to say there haven’t been successes though.&lt;/p&gt;
+
+&lt;p&gt;I ran another 10k (intentionally this time) getting a decent time, and have ran close to a half marathon during training. I’ve played Quidditch better than ever and enjoyed success with Manchester and Yorkshire, both of whom I’m now managing over the 2017/18 season.&lt;/p&gt;
+
+&lt;p&gt;Time management has always been a sore spot for me, but over the last year it’s improved in &lt;em&gt;almost&lt;/em&gt; every aspect of life. I’ve got better at delegating tasks and asking for help when needed; from moderating subs to running societies there’s no job now where I feel like I’m doing it alone.&lt;/p&gt;
+
+&lt;p&gt;Surprisingly I’m also pretty happy with where I got with “&lt;a href=&quot;http://web.archive.org/web/20160523142719im_/http://files.brightside.me/files/news/part_5/57255/963605-650-1449563743-baopu_15_yx_112415.jpg&quot;&gt;Say thanks, not sorry&lt;/a&gt; too. I’m not perfect with it by any means but better and going forward feel it can be integrated into general self-care.&lt;/p&gt;
+
+&lt;h2 id=&quot;2018&quot;&gt;2018&lt;/h2&gt;
+
+&lt;p&gt;After two years of not-so-good results I’m determined to recapture the success of &lt;a href=&quot;https://fogg.me.uk/2015/12/31/happy-new-year/&quot;&gt;2015&lt;/a&gt;, so the tactic is changing a little going into this year. With the resolutions I consistently struggle to keep the issue seems to be finding it difficult to form new habits.&lt;/p&gt;
+
+&lt;h3 id=&quot;loop&quot;&gt;Loop&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blogs/loop-screenshot.png&quot; alt=&quot;Screenshot of loop&quot; class=&quot;left&quot; width=&quot;200px%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To help in tracking my sticking to these habits I’m using a great little app called Loop, which is available on &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.isoron.uhabits&quot;&gt;Google Play&lt;/a&gt; and &lt;a href=&quot;https://f-droid.org/packages/org.isoron.uhabits/&quot;&gt;F-Droid&lt;/a&gt;. In the weeks running up to today I played around with a few different apps (both FOSS and proprietary) and this was the one that seemed to gel with how I work.&lt;/p&gt;
+
+&lt;p&gt;There are three broad areas into which I’m focusing my improvements: academic, creative, and health. Most are pretty self explanatory, but there are a few I want to mention.&lt;/p&gt;
+
+&lt;p&gt;Creative writing has really fallen by the wayside over the last few years, especially with prose. I’ve written the occasional poem but I haven’t written prose in a few years now. This year I’m challenging myself to write a side of A4 every day.&lt;/p&gt;
+
+&lt;p&gt;Update diary has replaced “The Week That Was”. While I did enjoy the self-reflection writing the blogs gave, it did start to feel more like a chore. My sister got me a &lt;a href=&quot;https://www.amazon.co.uk/One-Line-Day-Five-Year-Memory/dp/0811870197&quot;&gt;One Line a Day diary&lt;/a&gt; last Christmas so I’m just using that now which is working much better.&lt;/p&gt;
+
+&lt;p&gt;To make sure there’s an unambiguous win condition, each of these must be completed for 85% of the days in 2018. Thanks to the great stats features in the app I should be able to get consistent feedback on how I’m doing with that.&lt;/p&gt;
+
+&lt;h3 id=&quot;bigger-goals&quot;&gt;Bigger Goals&lt;/h3&gt;
+
+&lt;p&gt;Despite the focus on the smaller habits, I do still have some big goals that I want to achieve in 2018:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All assignments completed on time&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Finish year 3 with more than 65%&lt;/li&gt;
+  &lt;li&gt;Complete NaNoWriMo&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Read more than 52 books &lt;em&gt;and&lt;/em&gt; 14,000 pages&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Publish something at least once per week&lt;/li&gt;
+  &lt;li&gt;Complete a half-marathon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Will I succeed in these tasks? Will I make it to the end of the year with my faculties still in tact? Tune in next year to find out!&lt;/p&gt;
+
+&lt;p&gt;-Josh&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;I had such big plans for this in semester 1 and it just fell apart when the going got tough. Fingers crossed for this semester! &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;I last completed it in 2011 which will be 7 years ago as of next years. If I could do it then during A Levels I can do it now during my degree. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;The number of books read this year has gone up from 40 to 43. Meanwhile the number of pages has gone down from ~14,000 to ~10,000. I don’t want to fall into using the trap of just reading lots of short books to cheat a success on this goal. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Josh Fogg</name><email>joshua.h.fogg@gmail.com</email></author><category term="resolutions" /><summary type="html">Time once again for another year in review. Like my love of the Bourne series, this comes to you in two parts.</summary></entry></feed>

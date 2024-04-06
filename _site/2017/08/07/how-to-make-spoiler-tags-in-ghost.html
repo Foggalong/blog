@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How to make Spoiler Tags in Ghost | fogg.uk</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="How to make Spoiler Tags in Ghost" />
+<meta name="author" content="Josh Fogg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This blog was originally written for Ghost 0.x but the HTML support in Ghost 1.x on has changed significantly. At some point I’ll return to this and see if it can be fixed." />
+<meta property="og:description" content="This blog was originally written for Ghost 0.x but the HTML support in Ghost 1.x on has changed significantly. At some point I’ll return to this and see if it can be fixed." />
+<link rel="canonical" href="http://localhost:4000/2017/08/07/how-to-make-spoiler-tags-in-ghost.html" />
+<meta property="og:url" content="http://localhost:4000/2017/08/07/how-to-make-spoiler-tags-in-ghost.html" />
+<meta property="og:site_name" content="fogg.uk" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-08-07T15:48:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to make Spoiler Tags in Ghost" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/08/07/how-to-make-spoiler-tags-in-ghost.html"},"@type":"BlogPosting","url":"http://localhost:4000/2017/08/07/how-to-make-spoiler-tags-in-ghost.html","author":{"@type":"Person","name":"Josh Fogg"},"headline":"How to make Spoiler Tags in Ghost","dateModified":"2017-08-07T15:48:00+01:00","datePublished":"2017-08-07T15:48:00+01:00","description":"This blog was originally written for Ghost 0.x but the HTML support in Ghost 1.x on has changed significantly. At some point I’ll return to this and see if it can be fixed.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="icon" href="/assets/flav.svg">
+  <link rel="shortcut icon" href="/assets/flav.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  
+  <link rel="stylesheet" href="/assets/style.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="fogg.uk" /><script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+
+<header class="site-header">
+  
+  <nav class="site-nav">
+    
+    <a class="page-link" href="/" title="Home" alt="Home">
+      <svg>
+        
+        <use xlink:href="/assets/nav-icons/home.svg#nav"/>
+      </svg>
+    </a>
+
+    
+      <a class="page-link" href="/blog/" title="Posts" alt="Posts">
+        <svg>
+          <use xlink:href="/assets/nav-icons/blog.svg#nav"/>
+        </svg>
+      </a>
+      <a class="page-link" href="/about/" title="About" alt="About">
+        <svg>
+          <use xlink:href="/assets/nav-icons/about.svg#nav"/>
+        </svg>
+      </a>
+    <a class="page-link" href="/feed.xml" title="Feed">
+      <svg>
+        <use xlink:href="/assets/nav-icons/rss.svg#nav"/>
+      </svg>
+    </a>
+
+    
+    <a class="page-link" href="#" title="Top" alt="Top">
+      <svg>
+        <use xlink:href="/assets/nav-icons/top.svg#nav"/>
+      </svg>
+    </a>
+  </nav>
+</header>
+<main class="page-content" aria-label="Content">
+      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to make Spoiler Tags in Ghost</h1>
+
+
+
+
+<p class="post-meta" style= "text-align: center;">
+  <time title="" class="dt-published" datetime="2017-08-07T00:00:00+01:00" itemprop="datePublished">
+    2017-08-07
+  </time>
+
+  
+  •
+
+ 
+7 min read
+• 
+      <a href=/blog/tags#coding>coding</a>
+
+  
+    •
+    <a title="First published on Ghost" alt="First published on Ghost">
+      <svg style="vertical-align: sub; width: 16px; height: 16px;" =>
+        <use xlink:href="/assets/social-icons/Ghost.svg#soc"/>
+      </svg>
+    </a>
+</p>
+</header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>This blog was originally written for Ghost 0.x but the HTML support in Ghost 1.x on has changed significantly. At some point I’ll return to this and see if it can be fixed.</em></p>
+
+<hr />
+
+<p>If you’re a Redditor you’re probably no stranger to the <a href="https://www.reddit.com/r/startrek/comments/1e2bz3/some_advice_for_trekkies_before_seeing_into/c9w5rsk/">comment spoiler tag</a>. It’s a great way to safely talk about the plot of a film or game without ruining anything for someone who just happens upon your comment. But there’s nothing about it in the default <a href="https://daringfireball.net/projects/markdown/syntax">markdown syntax</a> nor in <a href="https://www.reddit.com/wiki/commenting">Reddit’s implementation</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, so where does it come from?</p>
+
+<p>Subreddit moderators have to implement for it themselves using custom stylesheets<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>] which is why the particular workings are different in each subreddit. From the users point of view the syntax is normally something like this:</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">I loved the prequels: [Jar Jar being Darth Plagueis](#spoiler) was genius!</code></p>
+</blockquote>
+
+<p>Which will then appear like this:</p>
+
+<blockquote>
+  <p>I loved the prequels: Jar Jar being Darth Plagueis was genius!<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
+</blockquote>
+
+<p>It’s a really useful tool but because it’s not included by default it’s absent from a lot of services which make use of markdown including GitHub, Diaspora*, and crucially Ghost. I’d like the ability to hide spoilers for a few review blogs I have planned so I spent a couple of hours today playing around with a few different ways it can be implemented.</p>
+
+<h2 id="button-reveal">Button Reveal</h2>
+
+<p>The first method I tried was using a button as <a href="http://www.bloggersentral.com/2009/12/create-show-hide-or-peek-boo.html">detailed here</a>. For single use it’s fairly simple from a UI perspective and is the most obvious in how it’s used. Click to reveal the hidden spoilers and then click again to hide them.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">style=</span><span class="s">"height: 40px; line-height: 0px; padding-left:10px; padding-right:10px; background:#555; color:#fff; border-radius:10px"</span> <span class="na">title=</span><span class="s">"Click to show/hide content"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">onclick=</span><span class="s">"if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}"</span><span class="nt">&gt;</span>
+&gt; CLICK FOR SPOILERS
+&gt; <span class="nt">&lt;/button&gt;</span>
+&gt; I loved the prequels: Jar Jar being Darth Plagueis was genius!
+</code></pre></div></div>
+
+<p>From a code point of view though it’s much less neat, even without accounting for styling:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span>
+    <span class="na">type=</span><span class="s">"button"</span>
+    <span class="na">onclick=</span><span class="s">"
+        if (document.getElementById('spoiler').style.display == 'none') {
+            document.getElementById('spoiler').style.display = ''
+        } else {
+            document.getElementById('spoiler').style.display = 'none'
+        }"</span>
+<span class="nt">&gt;</span>
+CLICK FOR SPOILERS
+<span class="nt">&lt;/button&gt;</span>
+I loved the prequels: <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"spoiler"</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span> Jar Jar being Darth Plagueis<span class="nt">&lt;/a&gt;</span> was genius!
+</code></pre></div></div>
+
+<p>It has some pretty obvious downsides too. It’s limited to one use per page unless you change the ID each time. Even then each reveal requires a new button, making it clunky if it’s used more than once in the same paragraph. There’s also no placeholder for the spoiler text making it confusing to read.</p>
+
+<h2 id="title-text-reveal">Title Text Reveal</h2>
+
+<p>Title Text is an attribute given to HTML which shows a given string when you hover over that HTML. I mostly see it in <a href="https://xkcd.com/444/">web</a> <a href="http://www.dumbingofage.com/2013/comic/book-3/04-just-hangin-out-with-my-family/hangtime/">comics</a> to add extra jokes or information, but there’re also a few subreddits which use it to conceal spoilers.</p>
+
+<blockquote>
+  <p>I loved the prequels: SPOILER was genius!</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I loved the prequels: <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"Jar Jar being Darth Plagueis"</span><span class="nt">&gt;</span>SPOILER<span class="nt">&lt;/a&gt;</span> was genius!
+</code></pre></div></div>
+
+<p>While the code is simple the appearance leaves much to be desired: it’s poor if there’s lots of text, it prevents clipboarding any spoilers, and it makes the sentence less fluid to read. That’s not even mentioning the fact that most mobile browsers don’t support title text for non-image elements.</p>
+
+<p>The only (admittedly big) benefit is that it doesn’t depend on Javascript or CSS so it’s more likely to function well with RSS readers. Most will strip out any JS &amp; CSS to reduce download size and in those cases this is the only implementation featured here which will function properly.<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
+
+<h2 id="select-reveal">Select Reveal</h2>
+
+<p>This is the one used in the introductory section of this blog. To reveal the spoiler just highlight the blocked section with your cursor (or finger on phone). It’s also by far the simplest in terms of code.</p>
+
+<blockquote>
+  <p>I loved the prequels: Jar Jar being Darth Plagueis was genius!</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I loved the prequels: <span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">"color:#555;background:#555"</span><span class="nt">&gt;</span>Jar Jar being Darth Plagueis<span class="nt">&lt;/a&gt;</span> was genius!
+</code></pre></div></div>
+
+<p>I like this one a lot but worry that it’s not the most intuitive for the reader, especially if you’re not particularly tech savvy. Also if other software is preventing selection (usually done to stop the user from copying and pasting<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>) the text is left inaccessible.</p>
+
+<h2 id="hover-event-reveal">Hover Event Reveal</h2>
+
+<p>Building on the previous it’s possible to make it both much prettier and a little more intuitive to use, without adding too much cruft to the code. For this one the user just has to hover the cursor (or tap on phone) to reveal the spoiler.</p>
+
+<blockquote>
+  <p>I loved the prequels: Jar Jar being Darth Plagueis is genius!</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I loved the prequels: <span class="nt">&lt;a</span>
+    <span class="na">style=</span><span class="s">"background:#555; color:#555"</span>
+    <span class="na">onmouseover=</span><span class="s">"this.style.background='#fff';
+    this.style.color='#555'"</span>
+    <span class="na">onmouseout=</span><span class="s">"this.style.background='#555';
+    this.style.color='#555'"</span>
+<span class="nt">&gt;</span>
+    Jar Jar being Darth Plagueis
+<span class="nt">&lt;/a&gt;</span> is genius!
+</code></pre></div></div>
+
+<p>The above version works using a combination of CSS and mouseover events, but the same effect can be achieved with CSS alone:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nf">#spoiler</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span><span class="m">#555</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span><span class="m">#555</span> <span class="p">}</span>
+    <span class="nf">#spoiler</span><span class="nd">:hover</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span><span class="m">#fff</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+I loved the prequels: <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"spoiler"</span><span class="nt">&gt;</span>Jar Jar being Darth Plagueis<span class="nt">&lt;/a&gt;</span> is genius!
+</code></pre></div></div>
+
+<p>While the <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tags might seem like they add extra baggage it has a big return if multiple spoiler tags are being used. You can also get a bit creative with the CSS and add some fade in/out animations if you want to go fancy. A minor disadvantage of using the <code class="language-plaintext highlighter-rouge">:hover</code> selector is that it’s <a href="https://www.w3schools.com/cssref/sel_hover.asp">unsupported</a> in some older browsers.</p>
+
+<h2 id="which-is-best">Which is best?</h2>
+
+<p>I’m not sure which I’ll use going forward. The CSS hover implementation feels like it strikes the right balance between appearance, simplicity, and intuitiveness. At the same time is that worth it if apps like RSS feeders are going to render the spoiler tag useless?</p>
+
+<p>There are a lot of different ways to do this including countless ones not mentioned here, but these are ones I found which seemed to make the most sense in the context of blogs. If you found this useful or have a different solution then <a href="https://twitter.com/Foggalong">drop me a Tweet</a>, I’d love to hear it!</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Though this <a href="https://reddit.com/r/announcements/comments/5or86n/spoilers_tags_for_posts/dclfk4s/?context=5">might change soon</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>This was one of the 100s of reasons that moderators were so annoyed when the admins announced they were <a href="https://redd.it/66q4is">canning custom CSS</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Not actually a spoiler but a brilliant fan theory, explored in detail <a href="https://redd.it/3qvj6w">in this thread</a>. What a trilogy that would have been. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Didn’t actually realise this would be the case until I published the blog and saw the mess TTRSS made of it. I quickly pulled the blog and republished it with a load of additions and caveats to cover that. Sorry if this meant my blog showed up in your reader twice! <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>I’ve used RSS readers before which did this. I don’t know why developers do it, but it’s mindbogglingly aggravating. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <a class="u-url" href="/2017/08/07/how-to-make-spoiler-tags-in-ghost.html" hidden></a>
+</article>
+
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+  
+
+  Copyright © 2022
+    <a href="mailto:joshua.h.fogg@gmail.com">Josh Fogg</a>
+      
+  · Made using <a href="https://jekyllrb.com">Jekyll</a> with <a href="https://github.com/Foggalong/Wren">Wren</a>
+
+  
+  <div class="social-list">
+    <a rel="author" alt="GitHub" title="foggalong" href="https://github.com/foggalong">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/GitHub.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="Instagram" title="joshua.h.fogg" href="https://instagram.com/joshua.h.fogg">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/Instagram.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="LinkedIn" title="joshfogg" href="https://linkedin.com/in/joshfogg">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/LinkedIn.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="Reddit" title="foggalong" href="https://reddit.com/u/foggalong">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/Reddit.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="Twitter" title="foggalong" href="https://twitter.com/foggalong">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/Twitter.svg#soc"/>
+      </svg>
+    </a>
+  
+
+</div>
+</footer>
+</body>
+
+</html>

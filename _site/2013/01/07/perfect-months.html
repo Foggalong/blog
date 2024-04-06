@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Perfect Months | fogg.uk</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Perfect Months" />
+<meta name="author" content="Josh Fogg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Every now and then a thought or idea will get into my head and won’t leave until I let it out. This can be anything from prose to a joke but more often than not is just some weird thing that’s popped up because I’ve been sat thinking too long. This once lead to me spending a month analysing hailstone sequences in the Collatz conjecture, hours developing a web browser that only (kinda) uses two lines of code, and much more recently the idea of “perfect months”.1 I definitely wasn’t the first to call these perfect months, the name didn’t really seem to be standard until 2021’s. &#8617;" />
+<meta property="og:description" content="Every now and then a thought or idea will get into my head and won’t leave until I let it out. This can be anything from prose to a joke but more often than not is just some weird thing that’s popped up because I’ve been sat thinking too long. This once lead to me spending a month analysing hailstone sequences in the Collatz conjecture, hours developing a web browser that only (kinda) uses two lines of code, and much more recently the idea of “perfect months”.1 I definitely wasn’t the first to call these perfect months, the name didn’t really seem to be standard until 2021’s. &#8617;" />
+<link rel="canonical" href="http://localhost:4000/2013/01/07/perfect-months.html" />
+<meta property="og:url" content="http://localhost:4000/2013/01/07/perfect-months.html" />
+<meta property="og:site_name" content="fogg.uk" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-01-07T21:18:16+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Perfect Months" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/01/07/perfect-months.html"},"@type":"BlogPosting","url":"http://localhost:4000/2013/01/07/perfect-months.html","author":{"@type":"Person","name":"Josh Fogg"},"headline":"Perfect Months","dateModified":"2013-01-07T21:18:16+00:00","datePublished":"2013-01-07T21:18:16+00:00","description":"Every now and then a thought or idea will get into my head and won’t leave until I let it out. This can be anything from prose to a joke but more often than not is just some weird thing that’s popped up because I’ve been sat thinking too long. This once lead to me spending a month analysing hailstone sequences in the Collatz conjecture, hours developing a web browser that only (kinda) uses two lines of code, and much more recently the idea of “perfect months”.1 I definitely wasn’t the first to call these perfect months, the name didn’t really seem to be standard until 2021’s. &#8617;","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="icon" href="/assets/flav.svg">
+  <link rel="shortcut icon" href="/assets/flav.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  
+  <link rel="stylesheet" href="/assets/style.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="fogg.uk" /><script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+
+<header class="site-header">
+  
+  <nav class="site-nav">
+    
+    <a class="page-link" href="/" title="Home" alt="Home">
+      <svg>
+        
+        <use xlink:href="/assets/nav-icons/home.svg#nav"/>
+      </svg>
+    </a>
+
+    
+      <a class="page-link" href="/blog/" title="Posts" alt="Posts">
+        <svg>
+          <use xlink:href="/assets/nav-icons/blog.svg#nav"/>
+        </svg>
+      </a>
+      <a class="page-link" href="/about/" title="About" alt="About">
+        <svg>
+          <use xlink:href="/assets/nav-icons/about.svg#nav"/>
+        </svg>
+      </a>
+    <a class="page-link" href="/feed.xml" title="Feed">
+      <svg>
+        <use xlink:href="/assets/nav-icons/rss.svg#nav"/>
+      </svg>
+    </a>
+
+    
+    <a class="page-link" href="#" title="Top" alt="Top">
+      <svg>
+        <use xlink:href="/assets/nav-icons/top.svg#nav"/>
+      </svg>
+    </a>
+  </nav>
+</header>
+<main class="page-content" aria-label="Content">
+      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Perfect Months</h1>
+
+
+
+
+<p class="post-meta" style= "text-align: center;">
+  <time title="Updated on 2015-01-07" class="dt-published" datetime="2013-01-07T00:00:00+00:00" itemprop="datePublished">
+    2013-01-07*
+  </time>
+
+  
+  •
+
+ 
+4 min read
+• 
+      <a href=/blog/tags#math>math</a>
+
+  
+    •
+    <a title="First published on Wordpress" alt="First published on Wordpress">
+      <svg style="vertical-align: sub; width: 16px; height: 16px;" =>
+        <use xlink:href="/assets/social-icons/Wordpress.svg#soc"/>
+      </svg>
+    </a>
+</p>
+</header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Every now and then a thought or idea will get into my head and won’t leave until I let it out. This can be anything from prose to a joke but more often than not is just some weird thing that’s popped up because I’ve been sat thinking too long. This once lead to me spending a month analysing hailstone sequences in the <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a>, hours developing a web browser that only (kinda) uses two lines of code, and much more recently the idea of “perfect months”.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">1</a></sup></p>
+
+<blockquote>
+  <p>February 2010 was the last month we had where the dates naturally presented themselves as block of 7×4, <em>i.e.</em> the first day was a Monday and last was a Sunday. This is also known as a “perfect month”. When using the Georgian (standard) calendar they can only occur as Februaries<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup> which are not in leap years. This is because these are the only conditions which make a month with a number of days divisible by the length of a week. There isn’t another perfect month until February 2021.</p>
+</blockquote>
+
+<p>While it may look copy-pasted it’s only from my Facebook and is all my own words and working. There’s no official thing of “perfect months”, only in the respect that I have now decided to make them a thing. As far as I know it’s not something people have mulled over before, it was just me being weird. I make my own calendars see: every year I write out all the dates on a sheet of paper instead of buying one. I was thinking while doing it this year, “I wish all the dates would fit into blocks. I wonder if they can? Well of course February can. I wonder when it does?”, which all lead to some maths and some programming (more specifically, these three condensed lines of python).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">isleap</span> <span class="k">as</span> <span class="n">l</span><span class="p">,</span> <span class="n">monthrange</span> <span class="k">as</span> <span class="n">r</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1752</span><span class="p">,</span> <span class="mi">2151</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">);</span> <span class="n">y</span><span class="o">+=</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p>That short program will list every perfect month between the first adoption of the Gregorian calendar in 1752 and the invasion of the Daleks in 2150. For that period of nearly 400 years a list of 42 appears: 1762, 1773, 1779, 1790, 1802, 1813, 1819, 1830, 1841, 1847, 1858, 1869, 1875, 1886, 1897, 1909, 1915, 1926, 1937, 1943, 1954, 1965, 1971, 1982, 1993, 1999, 2010, 2021, 2027, 2038, 2049, 2055, 2066, 2077, 2083, 2094, 2100, 2106, 2117, 2123, 2134 and 2145.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">3</a></sup></p>
+
+<p>I wouldn’t have stopped thinking about perfect months if I’d not done this, just like I can’t stop thinking of the Lego-combo-super-box or the Pokémon text adventure (did I tell you it was Pokémon themed now?), so I thought it was best to get it out there. Maybe I’ll share some of my other brain-farts with you another time? I think I’d like that.</p>
+
+<p>-Josh</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:3" role="doc-endnote">
+      <p>I definitely <a href="https://ablestmage.wordpress.com/2009/02/10/february-2009-the-perfect-month/">wasn’t</a> <a href="https://web.archive.org/web/20210422194838/http://answers.yahoo.com/question/index?qid=20090203161805AAYVyfZ">the first</a> to call these perfect months, the name didn’t really seem to be standard until <a href="https://en.wikipedia.org/wiki/Perfect_month">2021</a>’s. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:1" role="doc-endnote">
+      <p>I learnt that that the plural of February is <em>Februaries</em> which confused my poor brain for some time. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><em>“For what it’s worth, February 2151 also begins on a Monday. And since the Gregorian calendar has a period of 400 years, that completes all the work that needs to be done for that - in any 400-year stretch there’ll be 43 ‘perfect months’ as you call them.”</em> - comment by <a href="https://nebusresearch.wordpress.com">Joseph Nebus</a> on the original Wordpress version of this blog. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <a class="u-url" href="/2013/01/07/perfect-months.html" hidden></a>
+</article>
+
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+  
+
+  Copyright © 2022
+    <a href="mailto:joshua.h.fogg@gmail.com">Josh Fogg</a>
+      
+  · Made using <a href="https://jekyllrb.com">Jekyll</a> with <a href="https://github.com/Foggalong/Wren">Wren</a>
+
+  
+  <div class="social-list">
+    <a rel="author" alt="GitHub" title="foggalong" href="https://github.com/foggalong">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/GitHub.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="Instagram" title="joshua.h.fogg" href="https://instagram.com/joshua.h.fogg">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/Instagram.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="LinkedIn" title="joshfogg" href="https://linkedin.com/in/joshfogg">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/LinkedIn.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="Reddit" title="foggalong" href="https://reddit.com/u/foggalong">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/Reddit.svg#soc"/>
+      </svg>
+    </a>
+  
+
+    <a rel="author" alt="Twitter" title="foggalong" href="https://twitter.com/foggalong">
+      <svg>
+        
+        <use xlink:href="/assets/social-icons/Twitter.svg#soc"/>
+      </svg>
+    </a>
+  
+
+</div>
+</footer>
+</body>
+
+</html>
