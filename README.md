@@ -1,6 +1,6 @@
 # fogg.uk
 
-[![Jekyll CI](https://github.com/Foggalong/blog/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/Foggalong/blog/actions/workflows/codeql-analysis.yml)
+[![Deploy Jekyll site to Pages](https://github.com/Foggalong/blog/actions/workflows/jekyll.yml/badge.svg?branch=main)](https://github.com/Foggalong/blog/actions/workflows/jekyll.yml)
 
 Repository for my personal website. It's built using the following MIT licensed tools:
 
