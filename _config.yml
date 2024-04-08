@@ -6,15 +6,19 @@
 title: fogg.uk
 author:
   name: Josh Fogg
-  email: joshua.h.fogg@gmail.com
+  email: jfogg@duck.com
 description: >-  # this means to ignore newlines until the next key
   Personal website and blog of Josh Fogg. Mathematician, Writer, Gamer,
   and Techie. Not necessarily in that order.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "fogg.uk" # base hostname for your site (hosted)
 
-# Build settings
-theme: jekyll-wren  # use version https://rubygems.org/gems/jekyll-wren
+# Theme settings
+plugins:
+  - jekyll-remote-theme
+remote_theme: foggalong/wren@v0.4
+
+# Markdown+LaTeX settings
 markdown: kramdown  # enables extended markdown features (e.g footnotes)
 kramdown:
    math_engine: mathjax
