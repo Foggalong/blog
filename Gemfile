@@ -4,6 +4,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.2.0"  # depend on current Jekyll
+gem "webrick", "~> 1.8"   # needed for Ruby 3+
 gem "bundler"             # development dependency
 
 # If you have any plugins, put them here!
