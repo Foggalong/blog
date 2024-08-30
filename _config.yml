@@ -28,10 +28,20 @@ wren:
   # Generate social links in footer
   social_links:
     github: foggalong
-    instagram: joshua.h.fogg
     linkedin: joshfogg
-    reddit: foggalong
-    twitter: foggalong
+    # the following links are not covered by Wren's data
+    strava: 
+    - username: 53836163
+      name: Stava
+      instance: www.strava.com/athletes
+    storygraph: 
+    - username: jfogg
+      name: StoryGraph
+      instance: app.thestorygraph.com/profile
+    howlongtobeat: 
+    - username: foggalong
+      name: HowLongToBeat
+      instance: howlongtobeat.com/user
 
   # Pages to include in the header
   header_pages:
@@ -45,15 +55,6 @@ wren_social_data:
   github:
     name: GitHub
     url:  github.com
-  instagram:
-    name: Instagram
-    url:  instagram.com
   linkedin:
     name: LinkedIn
     url:  linkedin.com/in
-  reddit:
-    name: Reddit
-    url:  reddit.com/u
-  twitter:
-    name: Twitter
-    url:  twitter.com
