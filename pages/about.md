@@ -2,17 +2,17 @@
 layout: page
 title: About
 permalink: /about/
-# date: '2021-09-08'
+# date: '2024-08-30'
 ---
 
-![Photo of Me]({{ '/images/profiles/2019.png' | relative_url }}){: class="left" width="200px%" }
+![Photo of Me]({{ '/images/profiles/2024.png' | relative_url }}){: class="left" width="200px%" }
 
-I'm Josh Fogg (they), a 26 year old math student born in [Sheffield](https://en.wikipedia.org/wiki/Sheffield) in the UK. I did my undergrad masters at Manchester and am now studying for a PhD in Edinburgh. Now we've got the GCSE French out of the way, here's some fun stuff!
+I'm Josh Fogg (they), a 29 year old math student born in [Sheffield](https://en.wikipedia.org/wiki/Sheffield) in the UK. I did my undergrad masters at [Manchester](https://en.wikipedia.org/wiki/Manchester) and am now studying for a PhD in [Edinburgh](https://en.wikipedia.org/wiki/Edinburgh). Now we've got the GCSE French out of the way, here's the fun stuff!
 
-Up in Edinburgh I [run](https://www.strava.com/athletes/53836163) with the [Haries](https://haries.eusu.ed.ac.uk/), play dodgeball with the [Fireworks](https://www.facebook.com/edinburghdodgeball), and quidditch with the [Kelpies](https://quidditchuk.org/clubs/kelpies-quidditch-club). Quidditch in particular is an amazing and inclusive sport and I do my bit to keep it existing by overseeing volunteer recruitment and HR for [QuidditchUK](https://quidditchuk.org/).
+Up in Edinburgh I [run](https://www.strava.com/athletes/53836163) long distance, previously with the [Haries](https://haries.eusu.ed.ac.uk/) but now mostly solo with the occasional [parkrun](https://www.parkrun.org.uk/). I also play quadball with [Kelpies](https://quadballuk.org/clubs/kelpies-quidditch-club) and the [Scottish national team](https://quadballuk.org/programmes/team-scotland). It's an amazing and inclusive sport, I'd never played sports before joining but it's such a fun and welcoming community to be a part of!
 
-In my spare time there are a few open source projects I contribute to, but the big one is [Numix](http://numixproject.org/) where I maintain several icon themes. As well as design, I'm also a jack of all trades when it comes to coding having oodles of experience with Python, C++, MATLAB/Octave, R, and bash, plus some recreational tipples.
+Though my dedication to it has fluctuated over the years, I get immense joy out of creative writing. When writing for work allows, I try and make it to the [Summerhall writing group](https://www.meetup.com/suummerhallwritinggroup/) too.  This goes hand in hand with a love of [reading](https://app.thestorygraph.com/profile/jfogg), particularly speculative fiction, and I'm in a few book groups at [Lighthouse](https://lighthousebookshop.com/).
 
-Though my dedication to it has fluctuated over the years, I get immense joy out of creative writing. There are a few [writing](https://www.facebook.com/HiveYoungWriters/) [groups](https://www.facebook.com/groups/454110951444006/) I've been part of over the years but most of my writing these days is solo. It's been a while since I was confident in something enough to share it online, here's to changing that!
+Given everything else, it's probably no surprise that I love TTRPGs too! In the past I've played classics like [D&D](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons) and [Pathfinder](https://en.wikipedia.org/wiki/Pathfinder_Roleplaying_Game), but at the moment I'm part of campaigns run with [Spire](https://rowanrookanddecard.com/spire-rpg/) and [Agone](https://en.wikipedia.org/wiki/Agone) which are a lot of fun. Recently I got back into video games too and am _very_ slowly replaying my entire [back catalogue](https://howlongtobeat.com/user/foggalong).
 
-All in all, my time ends up divided between quite a range of activities from coding and design to music and gaming. This blog is an amalgamation off all that and an outlet to waffle on and share something that (I hope) you'll enjoy. So welcome, old friends and new: I hope you enjoy your stay in my little slice of the internet pie! 😃
+My time is scattered among all that and  [work stuff](https://fogg.uk) too. This blog amalgamates it all and gives an outlet to waffle on and share something that (I hope) you'll enjoy. So welcome, old friends and new: I hope you enjoy your stay in my little slice of the internet pie! 😃
