@@ -16,7 +16,7 @@ url: "fogg.uk" # base hostname for your site (hosted)
 # Theme settings
 plugins:
   - jekyll-remote-theme
-remote_theme: foggalong/wren@v0.4
+remote_theme: foggalong/wren@v0.4.1
 
 # Markdown+LaTeX settings
 markdown: kramdown  # enables extended markdown features (e.g footnotes)
@@ -28,20 +28,10 @@ wren:
   # Generate social links in footer
   social_links:
     github: foggalong
+    howlongtobeat: foggalong
     linkedin: joshfogg
-    # the following links are not covered by Wren's data
-    strava: 
-    - username: 53836163
-      name: Stava
-      instance: www.strava.com/athletes
-    storygraph: 
-    - username: jfogg
-      name: StoryGraph
-      instance: app.thestorygraph.com/profile
-    howlongtobeat: 
-    - username: foggalong
-      name: HowLongToBeat
-      instance: howlongtobeat.com/user
+    strava: 53836163
+    storygraph: jfogg
 
   # Pages to include in the header
   header_pages:
@@ -55,6 +45,15 @@ wren_social_data:
   github:
     name: GitHub
     url:  github.com
+  howlongtobeat:
+    name: HowLongToBeat
+    url: howlongtobeat.com/user
   linkedin:
     name: LinkedIn
     url:  linkedin.com/in
+  storygraph:
+    name: StoryGraph
+    url: app.thestorygraph.com/profile
+  strava:
+    name: Strava
+    url: www.strava.com/athletes
