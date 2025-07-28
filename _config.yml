@@ -16,7 +16,7 @@ url: "fogg.uk" # base hostname for your site (hosted)
 # Theme settings
 plugins:
   - jekyll-remote-theme
-remote_theme: foggalong/wren@v0.4.1
+remote_theme: foggalong/wren@v0.4.2
 
 # Markdown+LaTeX settings
 markdown: kramdown  # enables extended markdown features (e.g footnotes)
