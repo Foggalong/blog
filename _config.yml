@@ -1,7 +1,3 @@
-# Config file for settings affecting the whole blog. For technical reasons
-# this file is *NOT* auto-reloaded with 'bundle exec jekyll serve'; after
-# making changes here restart the server for them to take effect.
-
 # Site settings
 title: fogg.uk
 author:
@@ -10,8 +6,7 @@ author:
 description: >-  # this means to ignore newlines until the next key
   Personal website and blog of Josh Fogg. Mathematician, Writer, Gamer,
   and Techie. Not necessarily in that order.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "fogg.uk" # base hostname for your site (hosted)
+url: "fogg.uk"
 
 # Theme settings
 plugins:

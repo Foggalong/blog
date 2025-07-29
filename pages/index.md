@@ -1,21 +1,18 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 title: Welcome!
 layout: page
 permalink: /index.html
 ---
 
-Welcome to my little slice of the internet pie! Here you can find out a bit [about me](about) and read [my ramblings](blog) on various topics. Below is a rundown of some of what I do both online and elsewhere.
+Here's my little slice of the internet pie! You can find out a bit [about me](about) and read [my ramblings](blog) on various topics. Below is a rundown of some of what I do both online and elsewhere.
 
-#### Mathematics & Teaching
+#### Maths Teaching
 
-I'm a PhD student at the University of Edinburgh researching the [efficiency](https://en.wikipedia.org/wiki/Numerical_linear_algebra) of a [type of algorithm](https://en.wikipedia.org/wiki/Portfolio_optimization#Specific_approaches). As part of this I develop some open source packages to help better explore the problems, including [OctCLA](https://github.com/Foggalong/OctCLA) and [RobustOCS](https://github.com/Foggalong/RobustOCS).
+Day-to-day I work as a [teacher](blog/tags/#teaching) at the University of Edinburgh, specialising in maths for non-mathematicians and programming. Outwith work, I have a passion for and [math communication](blog/tags/#math). Check out this [rundown of public projects](maths).
 
 ![Josh their research on the history of Harry Markowitz at the 2024 EURO conference.]({{ '/images/blogs/home/presenting.jpeg' | relative_url }})
 
-Outside research I have a passion for [teaching](blog/tags/#teaching) and [math communication](blog/tags/#math). My [work profile](https://www.maths.ed.ac.uk/~jfogg/) has more details on past teaching activities and experience.
+I'm also finishing the corrections to my PhD here, which was researching the [efficiency](https://en.wikipedia.org/wiki/Numerical_linear_algebra) of a [type of algorithm](https://en.wikipedia.org/wiki/Portfolio_optimization#Specific_approaches). As part of that I developed some open source packages, [OctCLA](https://github.com/Foggalong/OctCLA) and [RobustOCS](https://github.com/Foggalong/RobustOCS), to help better explore the problems.
 
 #### Open Source Contributions
 
