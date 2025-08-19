@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reviving Wren
+title: Problem Sheets in Quarto
 tags: [coding, blog]
 date: '2025-08-19 16:30:00'
 ---
